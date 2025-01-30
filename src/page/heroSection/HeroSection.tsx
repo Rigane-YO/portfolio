@@ -38,7 +38,7 @@ const HeroSection = () => {
                    className={`p-2 rounded-full ${isDark ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'} transition-colors`}>
                   <FaLinkedin className={`w-6 h-6 ${isDark ? 'text-gray-300' : 'text-gray-600'}`} />
                 </a>
-                <a href="mailto:contact@example.com"
+                <a href="mailto:rigane.rakotozanany@gmail.com"
                    className={`p-2 rounded-full ${isDark ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'} transition-colors`}>
                   <Mail className={`w-6 h-6 ${isDark ? 'text-gray-300' : 'text-gray-600'}`} />
                 </a>
