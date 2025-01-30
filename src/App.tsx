@@ -6,7 +6,7 @@ import './App.css'
 function App() {
   return (
     <Router>
-       <TrackPageView />
+      <TrackPageView />
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
