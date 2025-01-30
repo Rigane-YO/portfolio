@@ -15,15 +15,24 @@ function Home() {
       {/* Navigation */}
       <Navigation />
 
-      {/* Hero Section */}
-      <HeroSection />
+      <div id="home">
+        {/* Hero Section */}
+        <HeroSection />
+      </div>
 
-      {/* About section  */}
-      <About />
-      {/* Current Project */}
-      <Project />
-      {/* Footer */}
-      <Footer />
+      <div id='about'>
+        {/* About section  */}
+        <About />
+      </div>
+
+      <div id='projects'>
+        {/* Project section  */}
+        <Project />
+      </div>
+      <div id='contact'>
+        <Footer />
+      </div>
+
     </div>
   );
 }

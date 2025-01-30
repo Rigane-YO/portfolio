@@ -1,12 +1,25 @@
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useTheme } from '../../component/ThemeContext';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navigation = () => {
     const { isDark, toggleTheme } = useTheme();
     const [activeSection, setActiveSection] = useState('home');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    useEffect(() => {
+        document.documentElement.classList.toggle('dark', isDark);
+    }, [isDark]);
+
+    const handleScroll = (sectionId: string) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const menuItems = ['Home', 'About', 'Projects', 'Contact'];
 
     return (
         <nav className={`fixed w-full ${isDark ? 'bg-gray-800' : 'bg-white'} shadow-sm z-50 transition-colors duration-200`}>
@@ -17,10 +30,13 @@ const Navigation = () => {
 
                     {/* Menu Desktop */}
                     <div className="hidden md:flex items-center space-x-6">
-                        {['Home', 'About', 'Projects', 'Contact'].map((item) => (
+                        {menuItems.map((item) => (
                             <button
                                 key={item}
-                                onClick={() => setActiveSection(item.toLowerCase())}
+                                onClick={() => {
+                                    setActiveSection(item.toLowerCase());
+                                    handleScroll(item.toLowerCase());
+                                }}
                                 className={`${activeSection === item.toLowerCase()
                                     ? 'text-blue-600'
                                     : isDark ? 'text-gray-300 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'
@@ -54,13 +70,14 @@ const Navigation = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.3, ease: 'easeInOut' }}
-                            className="md:hidden bg-white dark:bg-gray-800 shadow-md mt-2 rounded-lg p-4"
+                            className="absolute left-0 top-16 w-full bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 md:hidden"
                         >
-                            {['Home', 'About', 'Projects', 'Contact'].map((item, index) => (
+                            {menuItems.map((item, index) => (
                                 <motion.button
                                     key={item}
                                     onClick={() => {
                                         setActiveSection(item.toLowerCase());
+                                        handleScroll(item.toLowerCase());
                                         setIsMenuOpen(false); // Ferme le menu après un clic
                                     }}
                                     initial={{ opacity: 0, x: -20 }}

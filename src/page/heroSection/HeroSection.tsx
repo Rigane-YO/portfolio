@@ -1,7 +1,7 @@
 import { useTheme } from '../../component/ThemeContext';
 import { Mail } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import Profil from '../../assets/profil.png'; // Import correct
+import Profil from '../../assets/profil.png';
 
 const HeroSection = () => {
     const { isDark } = useTheme();
