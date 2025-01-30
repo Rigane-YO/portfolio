@@ -13,7 +13,7 @@ const HeroSection = () => {
             {/* Profile Image */}
             <div className="w-48 h-48 rounded-full overflow-hidden shadow-xl border-4 border-blue-500 flex-shrink-0">
               <img 
-                src={Profil}  // Correction ici
+                src={Profil}  
                 alt="Profile" 
                 className="w-full h-full object-cover"
               />
@@ -30,11 +30,11 @@ const HeroSection = () => {
                 Building modern web applications with a focus on performance and user experience.
               </p>
               <div className="flex space-x-4">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+                <a href="https://github.com/Rigane-YO/" target="_blank" rel="noopener noreferrer" 
                    className={`p-2 rounded-full ${isDark ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'} transition-colors`}>
                   <FaGithub className={`w-6 h-6 ${isDark ? 'text-gray-300' : 'text-gray-600'}`} />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                <a href="www.linkedin.com/in/rakotozanany-rigane-31747334a" target="_blank" rel="noopener noreferrer"
                    className={`p-2 rounded-full ${isDark ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'} transition-colors`}>
                   <FaLinkedin className={`w-6 h-6 ${isDark ? 'text-gray-300' : 'text-gray-600'}`} />
                 </a>
