@@ -5,7 +5,7 @@ import Navigation from '../page/navigation/Navigation';
 import HeroSection from '../page/heroSection/HeroSection';
 import About from '../page/about/About';
 import Project from '../page/projet/Projet'
-
+import Footer from '../page/navigation/Footer'
 function Home() {
 
   const { isDark } = useTheme();
@@ -22,6 +22,8 @@ function Home() {
       <About />
       {/* Current Project */}
       <Project />
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

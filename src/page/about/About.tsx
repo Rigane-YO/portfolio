@@ -1,5 +1,5 @@
 import { useTheme } from '../../component/ThemeContext';
-import { CheckCircle2, Rocket, MessageCircle,Code2, Cpu } from 'lucide-react';
+import { CheckCircle2, Rocket, MessageCircle, Code2, Cpu } from 'lucide-react';
 
 const About = () => {
 
@@ -12,8 +12,8 @@ const About = () => {
                         <div className="space-y-12">
                             {/* Introduction */}
                             <div>
-                                <h2 className={`text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>About Me</h2>
-                                <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'} leading-relaxed`}>
+                                <h2 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>About Me</h2>
+                                <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'} leading-relaxed`}>
                                     👋 Hey, I'm Reald! A passionate frontend developer who loves turning ideas into sleek, interactive experiences.
                                     My go-to tool? React! I'm always exploring best practices to build modern and high-performance user interfaces.
                                 </p>
@@ -23,11 +23,11 @@ const About = () => {
                             <div>
                                 <div className="flex items-center mb-4">
                                     <Code2 className="w-6 h-6 text-blue-600 mr-2" />
-                                    <h3 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Current Experience</h3>
+                                    <h3 className={`text-xl md:text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Current Experience</h3>
                                 </div>
-                                <div className={`${isDark ? 'bg-gray-700' : 'bg-gray-50'} rounded-xl p-6`}>
+                                <div className={`${isDark ? 'bg-gray-700' : 'bg-gray-50'} rounded-xl p-4 md:p-6`}>
                                     <div className="mb-4">
-                                        <h4 className={`text-xl font-semibold ${isDark ? 'text-white' : 'text-gray-800'}`}>Frontend Developer Intern</h4>
+                                        <h4 className={`text-lg md:text-xl font-semibold ${isDark ? 'text-white' : 'text-gray-800'}`}>Frontend Developer Intern</h4>
                                         <div className="flex items-center mt-2">
                                             <p className={`${isDark ? 'text-blue-400' : 'text-blue-600'} font-medium`}>Zafy Tody</p>
                                             <span className={`mx-2 ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>•</span>
@@ -60,9 +60,9 @@ const About = () => {
                             <div>
                                 <div className="flex items-center mb-4">
                                     <Rocket className="w-6 h-6 text-blue-600 mr-2" />
-                                    <h3 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>What Drives Me</h3>
+                                    <h3 className={`text-xl md:text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>What Drives Me</h3>
                                 </div>
-                                <div className={`${isDark ? 'bg-gray-700' : 'bg-gray-50'} rounded-xl p-6`}>
+                                <div className={`${isDark ? 'bg-gray-700' : 'bg-gray-50'} rounded-xl p-4 md:p-6`}>
                                     <p className={`${isDark ? 'text-gray-300' : 'text-gray-700'} mb-4`}>
                                         I'm always on the lookout for ways to improve and level up my skills. Right now, I'm diving deeper into
                                         advanced React concepts to push my frontend development further.
@@ -78,9 +78,9 @@ const About = () => {
                             <div>
                                 <div className="flex items-center mb-4">
                                     <MessageCircle className="w-6 h-6 text-blue-600 mr-2" />
-                                    <h3 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Let's Work Together!</h3>
+                                    <h3 className={`text-xl md:text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Let's Work Together!</h3>
                                 </div>
-                                <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                                <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                                     Looking for a motivated, creative developer ready to take on new challenges? Let's connect and bring your ideas to life! 🚀
                                 </p>
                             </div>
@@ -91,13 +91,13 @@ const About = () => {
             {/* Technologies */}
             <section className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-200`}>
                 <div className="container mx-auto px-4">
-                    <h2 className={`text-3xl font-bold text-center mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>Technologies</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <h2 className={`text-2xl md:text-3xl font-bold text-center mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>Technologies</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
                         {/* Frontend Technologies */}
-                        <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} p-6 rounded-xl shadow-lg`}>
+                        <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} p-4 md:p-6 rounded-xl shadow-lg`}>
                             <div className="flex items-center mb-4">
                                 <Code2 className={`w-6 h-6 ${isDark ? 'text-blue-400' : 'text-blue-600'} mr-2`} />
-                                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Frontend</h3>
+                                <h3 className={`text-lg md:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Frontend</h3>
                             </div>
                             <div className="space-y-3">
                                 {['React.js', 'TypeScript', 'Ionic'].map((tech) => (
@@ -110,10 +110,10 @@ const About = () => {
                         </div>
 
                         {/* State Management & API */}
-                        <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} p-6 rounded-xl shadow-lg`}>
+                        <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} p-4 md:p-6 rounded-xl shadow-lg`}>
                             <div className="flex items-center mb-4">
                                 <Cpu className={`w-6 h-6 ${isDark ? 'text-blue-400' : 'text-blue-600'} mr-2`} />
-                                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>State & API</h3>
+                                <h3 className={`text-lg md:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>State & API</h3>
                             </div>
                             <div className="space-y-3">
                                 {['React Query', 'Zustand', 'Axios'].map((tech) => (
@@ -126,10 +126,10 @@ const About = () => {
                         </div>
 
                         {/* Styling */}
-                        <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} p-6 rounded-xl shadow-lg`}>
+                        <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} p-4 md:p-6 rounded-xl shadow-lg`}>
                             <div className="flex items-center mb-4">
                                 <Code2 className={`w-6 h-6 ${isDark ? 'text-blue-400' : 'text-blue-600'} mr-2`} />
-                                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Styling</h3>
+                                <h3 className={`text-lg md:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Styling</h3>
                             </div>
                             <div className="space-y-3">
                                 {['Tailwind CSS', 'Bootstrap 5', 'Swift'].map((tech) => (
