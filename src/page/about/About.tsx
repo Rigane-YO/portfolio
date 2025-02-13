@@ -1,9 +1,44 @@
 import { useTheme } from '../../component/ThemeContext';
 import { CheckCircle2, Rocket, MessageCircle, Code2, Cpu } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect } from 'react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
 
     const { isDark } = useTheme();
+    useEffect(() => {
+        gsap.to(".cat", {
+            x: 100,
+            duration: 2,
+            yoyo: true,
+            repeat: -1, // Répétition infinie pour un effet de va-et-vient
+            ease: "power1.inOut"
+        });
+    
+        ScrollTrigger.create({
+            trigger: ".cat",
+            start: "top center",
+            end: "bottom center",
+            toggleActions: "play none none none", // Joue l'animation lorsqu'elle est visible
+        });
+    
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, []);
+    
+
+    const getTextColor = () => (isDark ? 'text-gray-300' : 'text-gray-700');
+    const getCardBg = () => (isDark ? 'bg-gray-700' : 'bg-gray-50');
+
+    const techCategories = [
+        { title: "Frontend", icon: Code2, items: ["React.js", "TypeScript", "Ionic"] },
+        { title: "State & API", icon: Cpu, items: ["React Query", "Zustand", "Axios"] },
+        { title: "Styling", icon: Code2, items: ["Tailwind CSS", "Bootstrap 5", "Swift"] },
+    ];
     return (
         <div>
             <section className={`py-20 ${isDark ? 'bg-gray-800' : 'bg-white'} transition-colors duration-200`}>
@@ -90,59 +125,28 @@ const About = () => {
             </section>
             {/* Technologies */}
             <section className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-200`}>
-                <div className="container mx-auto px-4">
-                    <h2 className={`text-2xl md:text-3xl font-bold text-center mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>Technologies</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
-                        {/* Frontend Technologies */}
-                        <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} p-4 md:p-6 rounded-xl shadow-lg`}>
-                            <div className="flex items-center mb-4">
-                                <Code2 className={`w-6 h-6 ${isDark ? 'text-blue-400' : 'text-blue-600'} mr-2`} />
-                                <h3 className={`text-lg md:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Frontend</h3>
+                            <div className="container mx-auto px-4 cat">
+                                <h2 className={`text-2xl md:text-3xl font-bold text-center mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>Technologies</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
+                                    {techCategories.map(({ title, icon: Icon, items }) => (
+                                        <div key={title} className={`${isDark ? 'bg-gray-800' : 'bg-white'} p-4 md:p-6 rounded-xl shadow-lg`}>
+                                            <div className="flex items-center mb-4">
+                                                <Icon className={`w-6 h-6 ${isDark ? 'text-blue-400' : 'text-blue-600'} mr-2`} />
+                                                <h3 className={`text-lg md:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>{title}</h3>
+                                            </div>
+                                            <div className="space-y-3">
+                                                {items.map((tech) => (
+                                                    <div key={tech} className={`flex items-center p-2 rounded-lg ${getCardBg()}`}>
+                                                        <CheckCircle2 className="w-4 h-4 text-green-500 mr-2" />
+                                                        <span className={getTextColor()}>{tech}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            <div className="space-y-3">
-                                {['React.js', 'TypeScript', 'Ionic'].map((tech) => (
-                                    <div key={tech} className={`flex items-center p-2 rounded-lg ${isDark ? 'bg-gray-700' : 'bg-gray-50'}`}>
-                                        <CheckCircle2 className="w-4 h-4 text-green-500 mr-2" />
-                                        <span className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{tech}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* State Management & API */}
-                        <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} p-4 md:p-6 rounded-xl shadow-lg`}>
-                            <div className="flex items-center mb-4">
-                                <Cpu className={`w-6 h-6 ${isDark ? 'text-blue-400' : 'text-blue-600'} mr-2`} />
-                                <h3 className={`text-lg md:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>State & API</h3>
-                            </div>
-                            <div className="space-y-3">
-                                {['React Query', 'Zustand', 'Axios'].map((tech) => (
-                                    <div key={tech} className={`flex items-center p-2 rounded-lg ${isDark ? 'bg-gray-700' : 'bg-gray-50'}`}>
-                                        <CheckCircle2 className="w-4 h-4 text-green-500 mr-2" />
-                                        <span className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{tech}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Styling */}
-                        <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} p-4 md:p-6 rounded-xl shadow-lg`}>
-                            <div className="flex items-center mb-4">
-                                <Code2 className={`w-6 h-6 ${isDark ? 'text-blue-400' : 'text-blue-600'} mr-2`} />
-                                <h3 className={`text-lg md:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Styling</h3>
-                            </div>
-                            <div className="space-y-3">
-                                {['Tailwind CSS', 'Bootstrap 5', 'Swift'].map((tech) => (
-                                    <div key={tech} className={`flex items-center p-2 rounded-lg ${isDark ? 'bg-gray-700' : 'bg-gray-50'}`}>
-                                        <CheckCircle2 className="w-4 h-4 text-green-500 mr-2" />
-                                        <span className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{tech}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                        </section>
         </div>
     );
 };
