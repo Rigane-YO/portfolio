@@ -13,7 +13,7 @@ function Home() {
 
 
   return (
-    <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-200`}>
+    <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-gray-60'} transition-colors duration-200`}>
       {/* Navigation */}
       <Navigation />
 
