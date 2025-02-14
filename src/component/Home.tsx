@@ -7,6 +7,8 @@ import Footer from '../page/navigation/Footer'
 import TimelineAnimation from './transition/TimeLineAnimation';
 
 
+
+
 function Home() {
 
   const { isDark } = useTheme();
@@ -19,10 +21,12 @@ function Home() {
 
 
       {/* Hero Section */}
+      <div className='pt-25'>
+        <HeroSection />
 
-      <HeroSection />
+      </div>
 
-      <div className='flex justify-center '>
+      <div className='flex justify-center relative '>
         <TimelineAnimation />
       </div>
       <div id='about'>
@@ -30,12 +34,15 @@ function Home() {
         <About />
       </div>
 
+      
+
       <div id='projects'>
         {/* Project section  */}
         <Project />
       </div>
       <div id='contact'>
         <Footer />
+
       </div>
 
     </div>
