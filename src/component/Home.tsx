@@ -22,7 +22,7 @@ function Home() {
 
       <HeroSection />
 
-      <div className='flex items-center justify-center'>
+      <div className='flex justify-center '>
         <TimelineAnimation />
       </div>
       <div id='about'>
