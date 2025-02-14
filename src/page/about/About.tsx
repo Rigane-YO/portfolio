@@ -11,7 +11,7 @@ const About = () => {
 
     useEffect(() => {
         gsap.to('.box', {
-            y: -git100,
+            y: -100,
             scrollTrigger: {
                 trigger: '.box',      // l'élément à observer
                 start: 'top 80%',       // quand le haut de .box atteint 80% du viewport
