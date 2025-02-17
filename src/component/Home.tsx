@@ -26,7 +26,7 @@ function Home() {
 
       </div>
 
-      <div className='flex justify-center relative '>
+      <div className='flex justify-center -mt-52 '>
         <TimelineAnimation />
       </div>
       <div id='about'>

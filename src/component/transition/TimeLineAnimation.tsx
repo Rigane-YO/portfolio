@@ -24,24 +24,24 @@ const TimelineAnimation: React.FC = () => {
       defaults: {
         duration: 0.05,
         autoAlpha: 1,
-        scale: 2, // Propriété scale ajoutée pour un meilleur effet d'interaction
+        scale: 1.8, // Propriété scale ajoutée pour un meilleur effet d'interaction
         transformOrigin: "center",
         ease: "elastic(2.5, 1)",
       },
     })
-      .to(".ball02, .text01", {}, 0.2)
-      .to(".ball03, .text02", {}, 0.33)
-      .to(".ball04, .text03", {}, 0.46)
-      .to(".ball05, .text04", {}, 0.59)
-      .to(".ball06, .text05", {}, 0.72)
-      .to(".ball07, .text06", {}, 0.85);
+      .to(".ball02, .text01 , .ligne-1 ", {}, 0.2)
+      .to(".ball03, .text02 , .ligne-2", {}, 0.33)
+      .to(".ball04, .text03 , .ligne-3", {}, 0.46)
+      .to(".ball05, .text04 , .ligne-4", {}, 0.59)
+      .to(".ball06, .text05 , .ligne-5", {}, 0.72)
+      .to(".ball07, .text06 , .ligne-6", {}, 0.85);
 
 
     // Timeline principale synchronisée avec le scroll
     const main = gsap.timeline({
       scrollTrigger: {
         trigger: svgRef.current,
-        scrub: true,
+        scrub: 1,
         start: "top center",
         end: "bottom center",
       },
@@ -74,19 +74,22 @@ const TimelineAnimation: React.FC = () => {
 
   return (
     <svg
+
       ref={svgRef}
       id="svg-stage"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 600 1200"
-      className="max-w-[600px] overflow-visible mt-[60vh]"
+      preserveAspectRatio="xMinYMin meet"
+      className="w-full h-auto max-w-[600px] overflow-visible mt-[30vh] sm:mt-[60vh]"
+
     >
       {/* Lignes horizontales */}
-      <path className={`line stroke-[2px] ${isDark ? 'stroke-gray-300' : 'stroke-gray-900'}`} d="M 10 200 600 200" />
-      <path className={`line stroke-[2px] ${isDark ? 'stroke-gray-300' : 'stroke-gray-900'}`} d="M 10 400 600 400" />
-      <path className={`line stroke-[2px] ${isDark ? 'stroke-gray-300' : 'stroke-gray-900'}`} d="M 10 600 600 600" />
-      <path className={`line stroke-[2px] ${isDark ? 'stroke-gray-300' : 'stroke-gray-900'}`} d="M 10 800 600 800" />
-      <path className={`line stroke-[2px] ${isDark ? 'stroke-gray-300' : 'stroke-gray-900'}`} d="M 10 1000 600 1000" />
-      <path className={`line stroke-[2px] ${isDark ? 'stroke-gray-300' : 'stroke-gray-900'}`} d="M 10 1200 600 1200" />
+      <path className={`line stroke-[2px] ligne-1 ${isDark ? 'stroke-gray-300' : 'stroke-gray-900'}`} d="M 10 200 600 200" />
+      <path className={`line stroke-[2px] ligne-2 ${isDark ? 'stroke-gray-300' : 'stroke-gray-900'}`} d="M 10 400 600 400" />
+      <path className={`line stroke-[2px] ligne-3 ${isDark ? 'stroke-gray-300' : 'stroke-gray-900'}`} d="M 10 600 600 600" />
+      <path className={`line stroke-[2px] ligne-4 ${isDark ? 'stroke-gray-300' : 'stroke-gray-900'}`} d="M 10 800 600 800" />
+      <path className={`line stroke-[2px] ligne-5 ${isDark ? 'stroke-gray-300' : 'stroke-gray-900'}`} d="M 10 1000 600 1000" />
+      <path className={`line stroke-[2px] ligne-6 ${isDark ? 'stroke-gray-300' : 'stroke-gray-900'}`} d="M 10 1200 600 1200" />
 
 
       {/* Textes de repère avec classes pour le pulse */}

@@ -1,13 +1,13 @@
 import { useTheme } from '../../component/ThemeContext';
-import {Sun, Calendar,LineChart,  CheckCircle2,} from 'lucide-react';
+import { Sun, Calendar, LineChart, CheckCircle2, } from 'lucide-react';
 const Projet = () => {
 
   const { isDark } = useTheme();
   return (
     <div>
-      <section  className={`py-20 ${isDark ? 'bg-gray-800' : 'bg-white'} transition-colors duration-200`}>
+      <section className={`py-20 ${isDark ? 'bg-gray-800' : 'bg-white'} transition-colors duration-200`}>
         <div className="container mx-auto px-4">
-          <h2 className={`text-2xl md:text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>Current Project</h2>
+          <h2 className={`text-2xl md:text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'} text-center `}>Current Project</h2>
           <div className="max-w-5xl mx-auto">
             <div className={`${isDark ? 'bg-gray-700' : 'bg-gray-50'} rounded-xl shadow-lg overflow-hidden`}>
               <div className="relative h-48 md:h-64 overflow-hidden">
