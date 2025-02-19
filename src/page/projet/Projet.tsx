@@ -1,9 +1,13 @@
 import { useTheme } from '../../component/ThemeContext';
 import { Sun, Calendar, LineChart, CheckCircle2, Music } from 'lucide-react';
-import ImagePlayer from '../../assets/media.png';
+
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ClockTransition from '../../component/transition/ClockTransition';
+
+import ImagePlayer from '../../assets/media.png';
+import ImageDash from '../../assets/Macbook-Air-localhost.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -86,7 +90,7 @@ const Projet = () => {
                           Ce que j'ai réalisé :
                         </h4>
                         <div className="space-y-3">
-                          {[ 
+                          {[
                             "Intégration complète du frontend avec React et gestion des requêtes API avec React Query.",
                             "Optimisation des performances grâce à un rendering efficace et une gestion optimisée des états.",
                             "Communication fluide avec le backend pour récupérer et afficher les données énergétiques en temps réel.",
@@ -241,8 +245,8 @@ const Projet = () => {
                             "Gestion de playlists personnalisées.",
                             "Contrôles avancés (pause, lecture, avance rapide, volume).",
                             "Interface intuitive et responsive.",
-                            "Lien : http://playrea.netlify.app.",
-                            "GitHub : https://github.com/Rigane-YO/Lecteur-Audio."
+                            "Lien : <a href='https://visiodash.netlify.app/' target='_blank' rel='noopener noreferrer'>https://visiodash.netlify.app/</a>.",
+                            "GitHub : <a href='https://github.com/Rigane-YO/visioDash' target='_blank' rel='noopener noreferrer'>https://github.com/Rigane-YO/visioDash</a>."
                           ].map((feature, index) => (
                             <div key={index} className="flex items-start">
                               <CheckCircle2 className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
@@ -311,6 +315,144 @@ const Projet = () => {
                     {[
                       'React.js', 'TypeScript', 'react-dropzone', 'react-player',
                       'music-metadata-browser', 'idb', 'tailwindcss'
+                    ].map((tech) => (
+                      <span
+                        key={tech}
+                        className={`px-3 py-1 ${isDark ? 'bg-gray-800' : 'bg-white'} rounded-full text-sm ${isDark ? 'text-gray-300' : 'text-gray-800'}`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          {/* transition trois  */}
+          <ClockTransition />
+
+          {/* section projet visioDash */}
+
+          <article className="max-w-5xl mx-auto pt-16">
+            <div className={`${isDark ? 'bg-gray-700' : 'bg-gray-50'} rounded-xl shadow-lg overflow-hidden`}>
+              <div className="relative h-48 md:h-64 overflow-hidden">
+                <img
+                  src={ImageDash}
+                  alt="Lecteur musical MP3"
+                  loading="lazy"
+                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-4 md:p-6">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    <Music className="inline-block mr-2" /> VisioDash
+                  </h3>
+                  <p className="text-gray-200"> Dashboard SaaS Offline et Personnalisable</p>
+                </div>
+              </div>
+
+              <div className="p-4 md:p-8">
+                <div className="space-y-6 mb-8">
+                  <div className={`${isDark ? 'text-gray-300' : 'text-gray-700'} space-y-4`}>
+                    <p className="leading-relaxed">
+                      VisioDash est une application de tableau de bord interactif qui permet
+                      aux entreprises de suivre en temps réel leurs indicateurs clés (ventes,
+                      marketing, finances, etc.) dans un environnement 100% offline. L’utilisateur
+                      peut ajouter, personnaliser et déplacer ses widgets pour visualiser
+                      ses données de façon dynamique
+                    </p>
+
+                    <div className="space-y-6 mt-8">
+                      <div>
+                        <h4 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                          🛠 Fonctionnalités :
+                        </h4>
+                        <div className="space-y-3">
+                          {[
+                            "Dashboard personnalisable :",
+                            "Ajout et suppression de widgets(graphique, KPI, etc.).",
+                            "Positionnement et redimensionnement des widgets par glisser - déposer.",
+                            "Mise à jour manuelle des données :",
+                            "Formulaire de saisie intégré dans le widget Chart pour contrôler et modifier les valeurs affichées.",
+                            "Visualisation interactive :",
+                            "Intégration de Chart.js via react-chartjs-2 pour afficher des graphiques dynamiques (line, bar, pie).",
+                            "Technologie Offline :",
+                            "Fonctionnement complet sans connexion Internet.",
+                            "Lien : <a href='http://playrea.netlify.app' target='_blank' rel='noopener noreferrer'>http://playrea.netlify.app</a>.",
+                            "GitHub : <a href='https://github.com/Rigane-YO/Lecteur-Audio' target='_blank' rel='noopener noreferrer'>https://github.com/Rigane-YO/Lecteur-Audio</a>."
+
+                          ].map((feature, index) => (
+                            <div key={index} className="flex items-start">
+                              <CheckCircle2 className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
+                              <p>{feature}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* 
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+                    <div className={`p-4 ${isDark ? 'bg-gray-800' : 'bg-white'} rounded-lg`}>
+                      <div className="flex items-center mb-2">
+                        <Sun className="w-5 h-5 mr-2 text-yellow-500" />
+                        <span className={`font-medium ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
+                          Lecture en continu
+                        </span>
+                      </div>
+                      <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                        Profitez d'une lecture fluide sans interruptions avec un support de multiples formats audio.
+                      </p>
+                    </div>
+
+                    <div className={`p-4 ${isDark ? 'bg-gray-800' : 'bg-white'} rounded-lg`}>
+                      <div className="flex items-center mb-2">
+                        <Calendar className="w-5 h-5 mr-2 text-blue-500" />
+                        <span className={`font-medium ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
+                          Gestion des playlists
+                        </span>
+                      </div>
+                      <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                        Créez et organisez vos propres playlists pour une expérience d'écoute personnalisée.
+                      </p>
+                    </div>
+
+                    <div className={`p-4 ${isDark ? 'bg-gray-800' : 'bg-white'} rounded-lg`}>
+                      <div className="flex items-center mb-2">
+                        <LineChart className="w-5 h-5 mr-2 text-green-500" />
+                        <span className={`font-medium ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
+                          Contrôle avancé du son
+                        </span>
+                      </div>
+                      <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                        Ajustez l'égaliseur et gérez le volume pour une qualité audio optimale.
+                      </p>
+                    </div>
+                  </div> */}
+
+                  <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} p-6 rounded-lg mt-8`}>
+                    <h4 className={`font-medium mb-4 ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
+                      💡 Défis Techniques et Solutions
+                    </h4>
+                    <p className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Gestion du mode offline :
+                      "Le principal défi était de développer une application fonctionnant intégralement en mode offline, avec une gestion locale des données, sans dépendance à une API externe."
+                      Drag & Drop et Redimensionnement :
+                      "L'utilisation de react-grid-layout a permis d'offrir une expérience utilisateur fluide pour le positionnement et le redimensionnement des widgets, malgré quelques défis initiaux avec les événements de clic et le drag."
+                      Mise à jour dynamique des graphiques :
+                      "L'intégration d'un formulaire de saisie dans les widgets graphiques a permis aux utilisateurs de modifier en temps réel leurs données et de voir instantanément les mises à jour sur les graphiques."
+                    </p>
+                  </div>
+                </div>
+
+                <div className="border-t border-gray-600 pt-6">
+                  <h4 className={`font-medium mb-3 ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
+                    🛠️ Tech Stack:
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      'React.js', 'TypeScript', 'Zustand (avec persist)', 'react-grid-layout ',
+                      'Chart.js et react-chartjs-2'
                     ].map((tech) => (
                       <span
                         key={tech}
