@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./component/Home";
 import TrackPageView from "./util/TrackPageView";
-import NotFound from "./page/notfound/NotFound";
+
 
 
 import "./App.css";
@@ -20,7 +20,7 @@ function App() {
         <div style={{ position: "relative", zIndex: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Not" element={<NotFound/>} />
+           
           </Routes>
         </div>
       </div>
