@@ -154,6 +154,16 @@ const Projet = () => {
                       systèmes énergétiques intelligents.
                     </p>
                   </div>
+
+                  {/* Liens du projet Solar - Ajoutez vos liens ici si disponibles */}
+                  <div className="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
+                    <h5 className={`font-semibold mb-3 ${isDark ? 'text-yellow-300' : 'text-yellow-800'}`}>
+                      🔗 Projet Solar :
+                    </h5>
+                    <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Ce projet est actuellement en développement privé. Les liens seront disponibles prochainement.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="border-t border-gray-600 pt-6">
@@ -244,15 +254,44 @@ const Projet = () => {
                             "Lecture de fichiers multimédias (audio & mp3).",
                             "Gestion de playlists personnalisées.",
                             "Contrôles avancés (pause, lecture, avance rapide, volume).",
-                            "Interface intuitive et responsive.",
-                            "Lien : <a href='https://visiodash.netlify.app/' target='_blank' rel='noopener noreferrer'>https://visiodash.netlify.app/</a>.",
-                            "GitHub : <a href='https://github.com/Rigane-YO/visioDash' target='_blank' rel='noopener noreferrer'>https://github.com/Rigane-YO/visioDash</a>."
+                            "Interface intuitive et responsive."
                           ].map((feature, index) => (
                             <div key={index} className="flex items-start">
                               <CheckCircle2 className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
                               <p>{feature}</p>
                             </div>
                           ))}
+                        </div>
+                      </div>
+
+                      {/* Liens du projet */}
+                      <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                        <h5 className={`font-semibold mb-3 ${isDark ? 'text-blue-300' : 'text-blue-800'}`}>
+                          🔗 Liens du projet :
+                        </h5>
+                        <div className="space-y-2">
+                          <div>
+                            <span className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Demo : </span>
+                            <a
+                              href="http://playrea.netlify.app"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
+                            >
+                              http://playrea.netlify.app
+                            </a>
+                          </div>
+                          <div>
+                            <span className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>GitHub : </span>
+                            <a
+                              href="https://github.com/Rigane-YO/Lecteur-Audio"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
+                            >
+                              https://github.com/Rigane-YO/Lecteur-Audio
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -377,9 +416,7 @@ const Projet = () => {
                             "Visualisation interactive :",
                             "Intégration de Chart.js via react-chartjs-2 pour afficher des graphiques dynamiques (line, bar, pie).",
                             "Technologie Offline :",
-                            "Fonctionnement complet sans connexion Internet.",
-                            "Lien : <a href='http://playrea.netlify.app' target='_blank' rel='noopener noreferrer'>http://playrea.netlify.app</a>.",
-                            "GitHub : <a href='https://github.com/Rigane-YO/Lecteur-Audio' target='_blank' rel='noopener noreferrer'>https://github.com/Rigane-YO/Lecteur-Audio</a>."
+                            "Fonctionnement complet sans connexion Internet."
 
                           ].map((feature, index) => (
                             <div key={index} className="flex items-start">
@@ -387,6 +424,37 @@ const Projet = () => {
                               <p>{feature}</p>
                             </div>
                           ))}
+                        </div>
+                      </div>
+
+                      {/* Liens du projet VisioDash */}
+                      <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                        <h5 className={`font-semibold mb-3 ${isDark ? 'text-blue-300' : 'text-blue-800'}`}>
+                          🔗 Liens du projet :
+                        </h5>
+                        <div className="space-y-2">
+                          <div>
+                            <span className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Demo : </span>
+                            <a
+                              href="https://visiodash.netlify.app/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
+                            >
+                              https://visiodash.netlify.app/
+                            </a>
+                          </div>
+                          <div>
+                            <span className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>GitHub : </span>
+                            <a
+                              href="https://github.com/Rigane-YO/visioDash"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
+                            >
+                              https://github.com/Rigane-YO/visioDash
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -1,1 +1,33 @@
 @import "tailwindcss";
+
+/* Configuration Tailwind CSS v4 */
+@theme {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* Styles personnalisés pour la navigation */
+.desktop-menu {
+  display: none;
+}
+
+.mobile-menu-btn {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .desktop-menu {
+    display: flex !important;
+  }
+
+  .mobile-menu-btn {
+    display: none !important;
+  }
+
+  .mobile-menu {
+    display: none !important;
+  }
+}

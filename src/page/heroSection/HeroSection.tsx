@@ -2,41 +2,44 @@ import { useTheme } from '../../component/ThemeContext';
 import { Mail } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Profil from '../../assets/profil.png';
-import { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
 const HeroSection = () => {
   const { isDark } = useTheme();
   const comp = useRef(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      tl.current = gsap.timeline()
-        .from('.profile-img', {
-          opacity: 0,
-          scale: 0.8,
-          duration: 1,
-          ease: 'power2.out',
-        })
-        .from('.hero-text', {
-          opacity: 0,
-          y: 50,
-          duration: 1,
-          stagger: 0.3,
-          ease: 'power2.out',
-        }, "-=0.5")
-        .from('.hero-icons a', {
-          opacity: 0,
-          y: 20,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: 'power2.out',
-        }, "-=0.3");
+      if (imageLoaded) {
+        tl.current = gsap.timeline()
+          .from('.profile-img', {
+            opacity: 0,
+            scale: 0.8,
+            duration: 1,
+            ease: 'power2.out',
+          })
+          .from('.hero-text', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.3,
+            ease: 'power2.out',
+          }, "-=0.5")
+          .from('.hero-icons a', {
+            opacity: 0,
+            y: 20,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power2.out',
+          }, "-=0.3");
+      }
     }, comp);
 
     return () => ctx.revert();
-  }, []);
+  }, [imageLoaded]);
 
   return (
     <div ref={comp}>
@@ -50,7 +53,15 @@ const HeroSection = () => {
                 src={Profil}
                 alt="Profile"
                 className="w-full h-full object-cover"
+                loading="lazy"
+                onLoad={() => setImageLoaded(true)}
+                style={{ opacity: imageLoaded ? 1 : 0 }}
               />
+              {!imageLoaded && (
+                <div className="w-full h-full bg-gray-200 dark:bg-gray-700 animate-pulse flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gray-300 dark:bg-gray-600 rounded-full"></div>
+                </div>
+              )}
             </div>
 
             <div>

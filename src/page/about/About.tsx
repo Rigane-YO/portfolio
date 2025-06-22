@@ -48,7 +48,7 @@ const About = () => {
                                     <div className="mb-4">
                                         <h4 className={`text-lg md:text-xl font-semibold ${isDark ? 'text-white' : 'text-gray-800'}`}>Frontend Developer Intern</h4>
                                         <div className="flex items-center mt-2">
-                                            <p className={`${isDark ? 'text-blue-400' : 'text-blue-600'} font-medium`}>Zafy Tody</p>
+                                            <p className={`${isDark ? 'text-blue-400' : 'text-blue-600'} font-medium`}>Steedy digital Solutions</p>
                                             <span className={`mx-2 ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>•</span>
                                             <p className={`${isDark ? 'text-gray-400' : 'text-gray-500'}`}>6 months internship</p>
                                         </div>

@@ -1,14 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./component/Home";
+import { lazy, Suspense } from "react";
 import TrackPageView from "./util/TrackPageView";
 
-
+// Lazy loading des composants
+const Home = lazy(() => import("./component/Home"));
 
 import "./App.css";
 
 function App() {
- 
-
   return (
     <Router>
       <TrackPageView />
@@ -18,10 +17,15 @@ function App() {
 
         {/* Contenu des routes au premier plan */}
         <div style={{ position: "relative", zIndex: 1 }}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-           
-          </Routes>
+          <Suspense fallback={
+            <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+              <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
+            </div>
+          }>
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </Suspense>
         </div>
       </div>
     </Router>
