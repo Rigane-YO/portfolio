@@ -8,6 +8,7 @@ import ClockTransition from '../../component/transition/ClockTransition';
 
 import ImagePlayer from '../../assets/media.png';
 import ImageDash from '../../assets/Macbook-Air-localhost.png';
+import './Projet.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,26 +53,69 @@ const Projet = () => {
   const { isDark } = useTheme();
   return (
     <div>
-      <section className={`py-20 ${isDark ? 'bg-gray-800' : 'bg-white'} transition-colors duration-200`}>
+      <section className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-gradient-to-br from-gray-50 to-blue-50'} transition-colors duration-200`}>
         <div className="container mx-auto px-4">
-          <h2 className={`text-2xl md:text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'} text-center`}>
-            Current Project
-          </h2>
+          {/* En-tête de section amélioré */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mb-6">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              Mes <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projets</span>
+            </h2>
+            <p className={`text-lg md:text-xl ${isDark ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto`}>
+              Découvrez mes réalisations techniques, des applications web innovantes aux solutions créatives
+            </p>
+            <div className="flex justify-center mt-6">
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+            </div>
+          </div>
 
           {/* Section Projet Solar */}
-          <article className="max-w-5xl mx-auto">
-            <div className={`${isDark ? 'bg-gray-700' : 'bg-gray-50'} rounded-xl shadow-lg overflow-hidden`}>
-              <div className="relative h-48 md:h-64 overflow-hidden">
+          <article className="max-w-6xl mx-auto mb-20">
+            {/* Badge de projet en vedette */}
+            <div className="flex justify-center mb-6">
+              <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-sm font-semibold rounded-full shadow-lg">
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                Projet Phare
+              </span>
+            </div>
+
+            <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} rounded-2xl shadow-2xl overflow-hidden border ${isDark ? 'border-gray-700' : 'border-gray-200'} hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 card-shine`}>
+              <div className="relative h-56 md:h-72 overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
                   alt="Installation de panneaux solaires"
                   loading="lazy"
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-4 md:p-6">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">☀️ Solar</h3>
-                  <p className="text-gray-200">Monitoring et Gestion de Données Énergétiques</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+                {/* Badge de statut */}
+                <div className="absolute top-4 right-4">
+                  <span className="inline-flex items-center px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full shadow-lg">
+                    <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
+                    En développement
+                  </span>
+                </div>
+
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <div className="flex items-center mb-3">
+                    <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mr-4">
+                      <span className="text-2xl">☀️</span>
+                    </div>
+                    <div>
+                      <h3 className="text-3xl md:text-4xl font-bold text-white mb-1">Solar</h3>
+                      <p className="text-yellow-200 font-medium">Application de Monitoring Énergétique</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-200 text-sm md:text-base">
+                    Surveillance en temps réel des installations solaires avec analytics avancés
+                  </p>
                 </div>
               </div>
 
@@ -155,33 +199,63 @@ const Projet = () => {
                     </p>
                   </div>
 
-                  {/* Liens du projet Solar - Ajoutez vos liens ici si disponibles */}
-                  <div className="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
-                    <h5 className={`font-semibold mb-3 ${isDark ? 'text-yellow-300' : 'text-yellow-800'}`}>
-                      🔗 Projet Solar :
-                    </h5>
-                    <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Ce projet est actuellement en développement privé. Les liens seront disponibles prochainement.
-                    </p>
+                  {/* Actions du projet Solar */}
+                  <div className="mt-8 p-6 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl border border-yellow-200 dark:border-yellow-800">
+                    <div className="flex items-center justify-between flex-wrap gap-4">
+                      <div>
+                        <h5 className={`font-bold text-lg mb-2 ${isDark ? 'text-yellow-300' : 'text-yellow-800'}`}>
+                          🚀 Statut du Projet
+                        </h5>
+                        <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                          Développement en cours - Version bêta prévue Q2 2024
+                        </p>
+                      </div>
+                      <div className="flex gap-3">
+                        <button className="px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                          <svg className="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                          Demo (Bientôt)
+                        </button>
+                        <button className="px-6 py-3 bg-gray-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                          <svg className="w-5 h-5 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                          </svg>
+                          Code (Privé)
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="border-t border-gray-600 pt-6">
-                  <h4 className={`font-medium mb-3 ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
-                    🛠️ Tech Stack:
+                <div className="border-t border-gray-300 dark:border-gray-600 pt-8">
+                  <h4 className={`font-bold text-lg mb-6 ${isDark ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mr-3">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    Technologies Utilisées
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                     {[
-                      'React.js', 'TypeScript', 'Axios', 'React Query',
-                      'Ionic', 'Swift', 'Chart.js', 'Django Rest Framework',
-                      'Railway'
+                      { name: 'React.js', color: 'from-blue-500 to-cyan-500' },
+                      { name: 'TypeScript', color: 'from-blue-600 to-blue-700' },
+                      { name: 'Axios', color: 'from-purple-500 to-purple-600' },
+                      { name: 'React Query', color: 'from-red-500 to-pink-500' },
+                      { name: 'Ionic', color: 'from-blue-400 to-blue-600' },
+                      { name: 'Swift', color: 'from-orange-500 to-red-500' },
+                      { name: 'Chart.js', color: 'from-green-500 to-emerald-500' },
+                      { name: 'Django RF', color: 'from-green-600 to-green-700' },
+                      { name: 'Railway', color: 'from-gray-600 to-gray-700' }
                     ].map((tech) => (
-                      <span
-                        key={tech}
-                        className={`px-3 py-1 ${isDark ? 'bg-gray-800' : 'bg-white'} rounded-full text-sm ${isDark ? 'text-gray-300' : 'text-gray-800'}`}
+                      <div
+                        key={tech.name}
+                        className={`px-4 py-3 bg-gradient-to-r ${tech.color} text-white rounded-lg text-sm font-semibold text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-default`}
                       >
-                        {tech}
-                      </span>
+                        {tech.name}
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -218,21 +292,48 @@ const Projet = () => {
           </div>
 
           {/* Section Projet Music Player */}
-          <article className="max-w-5xl mx-auto pt-16">
-            <div className={`${isDark ? 'bg-gray-700' : 'bg-gray-50'} rounded-xl shadow-lg overflow-hidden`}>
-              <div className="relative h-48 md:h-64 overflow-hidden">
+          <article className="max-w-6xl mx-auto pt-20 mb-20">
+            {/* Badge de projet populaire */}
+            <div className="flex justify-center mb-6">
+              <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-semibold rounded-full shadow-lg">
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+                </svg>
+                Projet Populaire
+              </span>
+            </div>
+
+            <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} rounded-2xl shadow-2xl overflow-hidden border ${isDark ? 'border-gray-700' : 'border-gray-200'} hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 card-shine`}>
+              <div className="relative h-56 md:h-72 overflow-hidden">
                 <img
                   src={ImagePlayer}
                   alt="Lecteur musical MP3"
                   loading="lazy"
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-4 md:p-6">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                    <Music className="inline-block mr-2" /> Music Player
-                  </h3>
-                  <p className="text-gray-200">Lecteur music mp3</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+                {/* Badge de statut */}
+                <div className="absolute top-4 right-4">
+                  <span className="inline-flex items-center px-3 py-1 bg-blue-500 text-white text-xs font-semibold rounded-full shadow-lg">
+                    <div className="w-2 h-2 bg-white rounded-full mr-2"></div>
+                    Disponible
+                  </span>
+                </div>
+
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <div className="flex items-center mb-3">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-4">
+                      <Music className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-3xl md:text-4xl font-bold text-white mb-1">Music Player</h3>
+                      <p className="text-purple-200 font-medium">Lecteur Multimédia Avancé</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-200 text-sm md:text-base">
+                    Interface moderne pour la gestion et lecture de fichiers audio
+                  </p>
                 </div>
               </div>
 
@@ -264,32 +365,42 @@ const Projet = () => {
                         </div>
                       </div>
 
-                      {/* Liens du projet */}
-                      <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                        <h5 className={`font-semibold mb-3 ${isDark ? 'text-blue-300' : 'text-blue-800'}`}>
-                          🔗 Liens du projet :
-                        </h5>
-                        <div className="space-y-2">
+                      {/* Actions du projet */}
+                      <div className="mt-8 p-6 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl border border-purple-200 dark:border-purple-800">
+                        <div className="flex items-center justify-between flex-wrap gap-4">
                           <div>
-                            <span className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Demo : </span>
+                            <h5 className={`font-bold text-lg mb-2 ${isDark ? 'text-purple-300' : 'text-purple-800'} flex items-center`}>
+                              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                              </svg>
+                              Projet Disponible
+                            </h5>
+                            <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                              Application complète et fonctionnelle
+                            </p>
+                          </div>
+                          <div className="flex gap-3">
                             <a
                               href="http://playrea.netlify.app"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
+                              className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center"
                             >
-                              http://playrea.netlify.app
+                              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                              </svg>
+                              Voir la Demo
                             </a>
-                          </div>
-                          <div>
-                            <span className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>GitHub : </span>
                             <a
                               href="https://github.com/Rigane-YO/Lecteur-Audio"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
+                              className="px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center"
                             >
-                              https://github.com/Rigane-YO/Lecteur-Audio
+                              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                              </svg>
+                              Code Source
                             </a>
                           </div>
                         </div>
@@ -346,21 +457,32 @@ const Projet = () => {
                   </div>
                 </div>
 
-                <div className="border-t border-gray-600 pt-6">
-                  <h4 className={`font-medium mb-3 ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
-                    🛠️ Tech Stack:
+                <div className="border-t border-gray-300 dark:border-gray-600 pt-8">
+                  <h4 className={`font-bold text-lg mb-6 ${isDark ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                    <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-3">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    Technologies Utilisées
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                     {[
-                      'React.js', 'TypeScript', 'react-dropzone', 'react-player',
-                      'music-metadata-browser', 'idb', 'tailwindcss'
+                      { name: 'React.js', color: 'from-blue-500 to-cyan-500' },
+                      { name: 'TypeScript', color: 'from-blue-600 to-blue-700' },
+                      { name: 'React Dropzone', color: 'from-green-500 to-emerald-500' },
+                      { name: 'React Player', color: 'from-red-500 to-pink-500' },
+                      { name: 'Music Metadata', color: 'from-purple-500 to-purple-600' },
+                      { name: 'IndexedDB', color: 'from-orange-500 to-red-500' },
+                      { name: 'TailwindCSS', color: 'from-cyan-500 to-blue-500' }
                     ].map((tech) => (
-                      <span
-                        key={tech}
-                        className={`px-3 py-1 ${isDark ? 'bg-gray-800' : 'bg-white'} rounded-full text-sm ${isDark ? 'text-gray-300' : 'text-gray-800'}`}
+                      <div
+                        key={tech.name}
+                        className={`px-4 py-3 bg-gradient-to-r ${tech.color} text-white rounded-lg text-sm font-semibold text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-default`}
                       >
-                        {tech}
-                      </span>
+                        {tech.name}
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -371,22 +493,50 @@ const Projet = () => {
           <ClockTransition />
 
           {/* section projet visioDash */}
+          <article className="max-w-6xl mx-auto pt-20 mb-20">
+            {/* Badge de projet innovant */}
+            <div className="flex justify-center mb-6">
+              <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-teal-500 text-white text-sm font-semibold rounded-full shadow-lg">
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+                </svg>
+                Projet Innovant
+              </span>
+            </div>
 
-          <article className="max-w-5xl mx-auto pt-16">
-            <div className={`${isDark ? 'bg-gray-700' : 'bg-gray-50'} rounded-xl shadow-lg overflow-hidden`}>
-              <div className="relative h-48 md:h-64 overflow-hidden">
+            <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} rounded-2xl shadow-2xl overflow-hidden border ${isDark ? 'border-gray-700' : 'border-gray-200'} hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 card-shine`}>
+              <div className="relative h-56 md:h-72 overflow-hidden">
                 <img
                   src={ImageDash}
-                  alt="Lecteur musical MP3"
+                  alt="Dashboard VisioDash"
                   loading="lazy"
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-4 md:p-6">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                    <Music className="inline-block mr-2" /> VisioDash
-                  </h3>
-                  <p className="text-gray-200"> Dashboard SaaS Offline et Personnalisable</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+                {/* Badge de statut */}
+                <div className="absolute top-4 right-4">
+                  <span className="inline-flex items-center px-3 py-1 bg-emerald-500 text-white text-xs font-semibold rounded-full shadow-lg">
+                    <div className="w-2 h-2 bg-white rounded-full mr-2"></div>
+                    Disponible
+                  </span>
+                </div>
+
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <div className="flex items-center mb-3">
+                    <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-3xl md:text-4xl font-bold text-white mb-1">VisioDash</h3>
+                      <p className="text-emerald-200 font-medium">Dashboard SaaS Offline et Personnalisable</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-200 text-sm md:text-base">
+                    Tableau de bord interactif avec widgets personnalisables et mode offline
+                  </p>
                 </div>
               </div>
 
@@ -427,32 +577,42 @@ const Projet = () => {
                         </div>
                       </div>
 
-                      {/* Liens du projet VisioDash */}
-                      <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                        <h5 className={`font-semibold mb-3 ${isDark ? 'text-blue-300' : 'text-blue-800'}`}>
-                          🔗 Liens du projet :
-                        </h5>
-                        <div className="space-y-2">
+                      {/* Actions du projet VisioDash */}
+                      <div className="mt-8 p-6 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl border border-emerald-200 dark:border-emerald-800">
+                        <div className="flex items-center justify-between flex-wrap gap-4">
                           <div>
-                            <span className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Demo : </span>
+                            <h5 className={`font-bold text-lg mb-2 ${isDark ? 'text-emerald-300' : 'text-emerald-800'} flex items-center`}>
+                              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                              </svg>
+                              Dashboard Interactif
+                            </h5>
+                            <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                              Application SaaS complète avec widgets personnalisables
+                            </p>
+                          </div>
+                          <div className="flex gap-3">
                             <a
                               href="https://visiodash.netlify.app/"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
+                              className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center"
                             >
-                              https://visiodash.netlify.app/
+                              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                              </svg>
+                              Voir la Demo
                             </a>
-                          </div>
-                          <div>
-                            <span className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>GitHub : </span>
                             <a
                               href="https://github.com/Rigane-YO/visioDash"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
+                              className="px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center"
                             >
-                              https://github.com/Rigane-YO/visioDash
+                              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                              </svg>
+                              Code Source
                             </a>
                           </div>
                         </div>
@@ -513,21 +673,31 @@ const Projet = () => {
                   </div>
                 </div>
 
-                <div className="border-t border-gray-600 pt-6">
-                  <h4 className={`font-medium mb-3 ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
-                    🛠️ Tech Stack:
+                <div className="border-t border-gray-300 dark:border-gray-600 pt-8">
+                  <h4 className={`font-bold text-lg mb-6 ${isDark ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                    <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center mr-3">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    Technologies Utilisées
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                     {[
-                      'React.js', 'TypeScript', 'Zustand (avec persist)', 'react-grid-layout ',
-                      'Chart.js et react-chartjs-2'
+                      { name: 'React.js', color: 'from-blue-500 to-cyan-500' },
+                      { name: 'TypeScript', color: 'from-blue-600 to-blue-700' },
+                      { name: 'Zustand', color: 'from-orange-500 to-red-500' },
+                      { name: 'Grid Layout', color: 'from-purple-500 to-purple-600' },
+                      { name: 'Chart.js', color: 'from-green-500 to-emerald-500' },
+                      { name: 'TailwindCSS', color: 'from-cyan-500 to-blue-500' }
                     ].map((tech) => (
-                      <span
-                        key={tech}
-                        className={`px-3 py-1 ${isDark ? 'bg-gray-800' : 'bg-white'} rounded-full text-sm ${isDark ? 'text-gray-300' : 'text-gray-800'}`}
+                      <div
+                        key={tech.name}
+                        className={`px-4 py-3 bg-gradient-to-r ${tech.color} text-white rounded-lg text-sm font-semibold text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-default`}
                       >
-                        {tech}
-                      </span>
+                        {tech.name}
+                      </div>
                     ))}
                   </div>
                 </div>
