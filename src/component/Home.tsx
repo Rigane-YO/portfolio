@@ -18,7 +18,7 @@ function Home() {
   const { isDark } = useTheme();
 
   return (
-    <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-gray-60'} transition-colors duration-200`}>
+    <main className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-gray-60'} transition-colors duration-200`}>
       {/* Navigation */}
       <Navigation />
 
@@ -56,7 +56,7 @@ function Home() {
 
       {/* Monitor de performance (dev uniquement) */}
       <PerformanceMonitor />
-    </div>
+    </main>
   );
 }
 
