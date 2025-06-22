@@ -1,13 +1,18 @@
 import { useTheme } from './ThemeContext';
 import Navigation from '../page/navigation/Navigation';
 import HeroSection from '../page/heroSection/HeroSection';
-import About from '../page/about/About';
-import Project from '../page/projet/Projet'
-import Contact from '../page/navigation/Contact'
-import Testimonials from '../page/testimonials/Testimonials'
-import Skills from './Skills'
 import Footer from '../page/navigation/Footer'
 import TimelineAnimation from './transition/TimeLineAnimation';
+import PerformanceMonitor from './PerformanceMonitor';
+
+// Import des composants lazy
+import {
+  LazyAbout,
+  LazySkills,
+  LazyProjects,
+  LazyTestimonials,
+  LazyContact
+} from './LazySection';
 
 function Home() {
   const { isDark } = useTheme();
@@ -27,27 +32,30 @@ function Home() {
       </div>
       
       <div id='about'>
-        {/* About section  */}
-        <About />
+        {/* About section avec lazy loading */}
+        <LazyAbout />
       </div>
 
-      {/* Skills section */}
-      <Skills />
+      {/* Skills section avec lazy loading */}
+      <LazySkills />
 
       <div id='projects'>
-        {/* Project section  */}
-        <Project />
+        {/* Project section avec lazy loading */}
+        <LazyProjects />
       </div>
-      
-      {/* Testimonials section */}
-      <Testimonials />
-      
+
+      {/* Testimonials section avec lazy loading */}
+      <LazyTestimonials />
+
       <div id='contact'>
-        {/* Contact section  */}
-        <Contact />
+        {/* Contact section avec lazy loading */}
+        <LazyContact />
       </div>
       
       <Footer />
+
+      {/* Monitor de performance (dev uniquement) */}
+      <PerformanceMonitor />
     </div>
   );
 }

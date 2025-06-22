@@ -3,6 +3,7 @@ import { Mail } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Profil from '../../assets/profil.png';
 import { useLayoutEffect, useRef, useState } from 'react';
+import OptimizedImage from '../../component/OptimizedImage';
 import gsap from 'gsap';
 
 const HeroSection = () => {
@@ -47,21 +48,18 @@ const HeroSection = () => {
         <div className="container mx-auto">
           <div className="max-w-6xl flex flex-col md:flex-row-reverse items-center gap-8">
             
-            {/* Profile Image */}
+            {/* Profile Image Optimisée */}
             <div className="w-48 h-48 rounded-full overflow-hidden shadow-xl border-4 border-blue-500 flex-shrink-0 profile-img">
-              <img
+              <OptimizedImage
                 src={Profil}
-                alt="Profile"
+                alt="RAKOTOZANANY Reald Rigane - Frontend Developer"
                 className="w-full h-full object-cover"
-                loading="lazy"
+                width={192}
+                height={192}
+                priority={true}
                 onLoad={() => setImageLoaded(true)}
-                style={{ opacity: imageLoaded ? 1 : 0 }}
+                sizes="(max-width: 768px) 192px, 192px"
               />
-              {!imageLoaded && (
-                <div className="w-full h-full bg-gray-200 dark:bg-gray-700 animate-pulse flex items-center justify-center">
-                  <div className="w-16 h-16 bg-gray-300 dark:bg-gray-600 rounded-full"></div>
-                </div>
-              )}
             </div>
 
             <div>

@@ -1,5 +1,32 @@
 @import "tailwindcss";
 
+/* Animations pour l'optimisation des performances */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Optimisation du rendu */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Préchargement des polices */
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+}
+
 /* Configuration Tailwind CSS v4 */
 @theme {
   --breakpoint-sm: 640px;
