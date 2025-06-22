@@ -136,7 +136,7 @@ const Skills = () => {
               Je continue d'apprendre et de maîtriser de nouvelles technologies pour rester à la pointe du développement web moderne.
             </p>
             <div className="flex flex-wrap justify-center gap-2">
-              {['Next.js', 'Node.js', 'GraphQL', 'Docker'].map((tech, index) => (
+              {['Next.js', 'Node.js', 'GraphQL', 'Docker'].map((tech) => (
                 <span
                   key={tech}
                   className={`px-3 py-1 rounded-full text-sm ${isDark ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-700'}`}

@@ -17,7 +17,7 @@ export interface ContactFormData {
 }
 
 // Interface pour les paramètres du template EmailJS
-export interface EmailTemplateParams {
+export interface EmailTemplateParams extends Record<string, unknown> {
   from_name: string;
   from_email: string;
   subject: string;
