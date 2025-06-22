@@ -21,7 +21,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'fr', // Langue par défaut
-    debug: process.env.NODE_ENV === 'development',
+    debug: import.meta.env.DEV,
     
     interpolation: {
       escapeValue: false, // React échappe déjà les valeurs
