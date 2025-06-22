@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ClockTransition from '../../component/transition/ClockTransition';
+import { useTranslation } from 'react-i18next';
 
 import ImagePlayer from '../../assets/media.png';
 import ImageDash from '../../assets/Macbook-Air-localhost.png';
@@ -51,6 +52,7 @@ const Projet = () => {
   }, []);
 
   const { isDark } = useTheme();
+  const { t } = useTranslation();
   return (
     <div>
       <section className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-gradient-to-br from-gray-50 to-blue-50'} transition-colors duration-200`}>
@@ -63,7 +65,7 @@ const Projet = () => {
               </svg>
             </div>
             <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-              Mes <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projets</span>
+              {t('projects.title').split(' ')[0]} <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{t('projects.title').split(' ')[1]}</span>
             </h2>
             <p className={`text-lg md:text-xl ${isDark ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto`}>
               Découvrez mes réalisations techniques, des applications web innovantes aux solutions créatives
@@ -123,23 +125,16 @@ const Projet = () => {
                 <div className="space-y-6 mb-8">
                   <div className={`${isDark ? 'text-gray-300' : 'text-gray-700'} space-y-4`}>
                     <p className="leading-relaxed">
-                      Solar est une application web développée avec React pour visualiser et gérer les données de production
-                      et de consommation d'énergie solaire. Connectée à un backend en Django Rest Framework, elle offre une
-                      interface fluide et intuitive permettant aux utilisateurs de surveiller en temps réel leurs installations solaires.
+                      {t('projects.solar.description')}
                     </p>
 
                     <div className="space-y-6 mt-8">
                       <div>
                         <h4 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                          Ce que j'ai réalisé :
+                          {t('projects.common.whatIBuilt')}
                         </h4>
                         <div className="space-y-3">
-                          {[
-                            "Intégration complète du frontend avec React et gestion des requêtes API avec React Query.",
-                            "Optimisation des performances grâce à un rendering efficace et une gestion optimisée des états.",
-                            "Communication fluide avec le backend pour récupérer et afficher les données énergétiques en temps réel.",
-                            "Conception d'une interface utilisateur intuitive, facilitant la navigation et l'analyse des données."
-                          ].map((item, index) => (
+                          {(t('projects.solar.achievements', { returnObjects: true }) as string[]).map((item, index) => (
                             <div key={index} className="flex items-start">
                               <CheckCircle2 className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
                               <p>{item}</p>
@@ -155,11 +150,11 @@ const Projet = () => {
                       <div className="flex items-center mb-2">
                         <Sun className="w-5 h-5 mr-2 text-yellow-500" />
                         <span className={`font-medium ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
-                          Real-time Monitoring
+                          {t('projects.solar.features.realTimeMonitoring')}
                         </span>
                       </div>
                       <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                        Live power consumption tracking
+                        {t('projects.solar.features.realTimeDesc')}
                       </p>
                     </div>
 
@@ -167,11 +162,11 @@ const Projet = () => {
                       <div className="flex items-center mb-2">
                         <Calendar className="w-5 h-5 mr-2 text-blue-500" />
                         <span className={`font-medium ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
-                          Historical Data
+                          {t('projects.solar.features.historicalData')}
                         </span>
                       </div>
                       <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                        Daily/Weekly/Monthly/Yearly reports
+                        {t('projects.solar.features.historicalDesc')}
                       </p>
                     </div>
 
@@ -179,23 +174,21 @@ const Projet = () => {
                       <div className="flex items-center mb-2">
                         <LineChart className="w-5 h-5 mr-2 text-green-500" />
                         <span className={`font-medium ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
-                          Data Visualization
+                          {t('projects.solar.features.dataVisualization')}
                         </span>
                       </div>
                       <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                        Interactive charts and analytics
+                        {t('projects.solar.features.dataVisualizationDesc')}
                       </p>
                     </div>
                   </div>
 
                   <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} p-6 rounded-lg mt-8`}>
                     <h4 className={`font-medium mb-4 ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
-                      💡 Pourquoi ce projet est important ?
+                      {t('projects.common.whyImportant')}
                     </h4>
                     <p className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Ce projet m'a permis d'approfondir mes compétences en développement frontend avancé, en optimisation d'appels API
-                      et en collaboration avec un backend structuré. Il m'a aussi donné une meilleure compréhension des enjeux liés aux
-                      systèmes énergétiques intelligents.
+                      {t('projects.solar.whyImportant')}
                     </p>
                   </div>
 
@@ -204,10 +197,10 @@ const Projet = () => {
                     <div className="flex items-center justify-between flex-wrap gap-4">
                       <div>
                         <h5 className={`font-bold text-lg mb-2 ${isDark ? 'text-yellow-300' : 'text-yellow-800'}`}>
-                          🚀 Statut du Projet
+                          {t('projects.common.projectStatus')}
                         </h5>
                         <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                          Développement en cours - Version bêta prévue Q2 2024
+                          {t('projects.solar.status')}
                         </p>
                       </div>
                       <div className="flex gap-3">
@@ -215,13 +208,13 @@ const Projet = () => {
                           <svg className="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                           </svg>
-                          Demo (Bientôt)
+                          {t('projects.buttons.demoSoon')}
                         </button>
                         <button className="px-6 py-3 bg-gray-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
                           <svg className="w-5 h-5 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                           </svg>
-                          Code (Privé)
+                          {t('projects.buttons.codePrivate')}
                         </button>
                       </div>
                     </div>
@@ -236,7 +229,7 @@ const Projet = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                     </div>
-                    Technologies Utilisées
+                    {t('projects.common.technologiesUsed')}
                   </h4>
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                     {[
@@ -299,7 +292,7 @@ const Projet = () => {
                 <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
                 </svg>
-                Projet Populaire
+                {t('projects.badges.popular')}
               </span>
             </div>
 
@@ -317,7 +310,7 @@ const Projet = () => {
                 <div className="absolute top-4 right-4">
                   <span className="inline-flex items-center px-3 py-1 bg-blue-500 text-white text-xs font-semibold rounded-full shadow-lg">
                     <div className="w-2 h-2 bg-white rounded-full mr-2"></div>
-                    Disponible
+                    {t('projects.badges.available')}
                   </span>
                 </div>
 
@@ -327,8 +320,8 @@ const Projet = () => {
                       <Music className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-3xl md:text-4xl font-bold text-white mb-1">Music Player</h3>
-                      <p className="text-purple-200 font-medium">Lecteur Multimédia Avancé</p>
+                      <h3 className="text-3xl md:text-4xl font-bold text-white mb-1">{t('projects.musicPlayer.title')}</h3>
+                      <p className="text-purple-200 font-medium">{t('projects.musicPlayer.subtitle')}</p>
                     </div>
                   </div>
                   <p className="text-gray-200 text-sm md:text-base">
@@ -341,22 +334,16 @@ const Projet = () => {
                 <div className="space-y-6 mb-8">
                   <div className={`${isDark ? 'text-gray-300' : 'text-gray-700'} space-y-4`}>
                     <p className="leading-relaxed">
-                      🎵 MyPlaylist – Un lecteur multimédia léger et performant.
-                      Un lecteur de playlists inspiré de VLC, permettant de lire facilement des fichiers audio et vidéo avec une interface simple et fluide.
+                      {t('projects.musicPlayer.description')}
                     </p>
 
                     <div className="space-y-6 mt-8">
                       <div>
                         <h4 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                          🛠 Fonctionnalités :
+                          {t('projects.common.features')}
                         </h4>
                         <div className="space-y-3">
-                          {[
-                            "Lecture de fichiers multimédias (audio & mp3).",
-                            "Gestion de playlists personnalisées.",
-                            "Contrôles avancés (pause, lecture, avance rapide, volume).",
-                            "Interface intuitive et responsive."
-                          ].map((feature, index) => (
+                          {(t('projects.musicPlayer.features', { returnObjects: true }) as string[]).map((feature, index) => (
                             <div key={index} className="flex items-start">
                               <CheckCircle2 className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
                               <p>{feature}</p>
@@ -373,10 +360,10 @@ const Projet = () => {
                               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                               </svg>
-                              Projet Disponible
+                              {t('projects.musicPlayer.statusTitle')}
                             </h5>
                             <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                              Application complète et fonctionnelle
+                              {t('projects.musicPlayer.statusDesc')}
                             </p>
                           </div>
                           <div className="flex gap-3">
@@ -389,7 +376,7 @@ const Projet = () => {
                               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                               </svg>
-                              Voir la Demo
+                              {t('projects.buttons.demo')}
                             </a>
                             <a
                               href="https://github.com/Rigane-YO/Lecteur-Audio"
@@ -398,9 +385,9 @@ const Projet = () => {
                               className="px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center"
                             >
                               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                               </svg>
-                              Code Source
+                              {t('projects.buttons.code')}
                             </a>
                           </div>
                         </div>
@@ -413,11 +400,11 @@ const Projet = () => {
                       <div className="flex items-center mb-2">
                         <Sun className="w-5 h-5 mr-2 text-yellow-500" />
                         <span className={`font-medium ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
-                          Lecture en continu
+                          {t('projects.musicPlayer.featureCards.continuousPlayback')}
                         </span>
                       </div>
                       <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                        Profitez d'une lecture fluide sans interruptions avec un support de multiples formats audio.
+                        {t('projects.musicPlayer.featureCards.continuousDesc')}
                       </p>
                     </div>
 
@@ -425,11 +412,11 @@ const Projet = () => {
                       <div className="flex items-center mb-2">
                         <Calendar className="w-5 h-5 mr-2 text-blue-500" />
                         <span className={`font-medium ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
-                          Gestion des playlists
+                          {t('projects.musicPlayer.featureCards.playlistManagement')}
                         </span>
                       </div>
                       <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                        Créez et organisez vos propres playlists pour une expérience d'écoute personnalisée.
+                        {t('projects.musicPlayer.featureCards.playlistDesc')}
                       </p>
                     </div>
 
@@ -437,22 +424,21 @@ const Projet = () => {
                       <div className="flex items-center mb-2">
                         <LineChart className="w-5 h-5 mr-2 text-green-500" />
                         <span className={`font-medium ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
-                          Contrôle avancé du son
+                          {t('projects.musicPlayer.featureCards.advancedControls')}
                         </span>
                       </div>
                       <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                        Ajustez l'égaliseur et gérez le volume pour une qualité audio optimale.
+                        {t('projects.musicPlayer.featureCards.advancedDesc')}
                       </p>
                     </div>
                   </div>
 
                   <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} p-6 rounded-lg mt-8`}>
                     <h4 className={`font-medium mb-4 ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
-                      💡 Pourquoi ce projet est important ?
+                      {t('projects.common.whyImportant')}
                     </h4>
                     <p className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Ce projet m'a permis d'approfondir mes compétences en développement frontend avancé avec React et TypeScript.
-                      J'ai aussi appris à gérer des fichiers multimédias, à implémenter des contrôles de lecture personnalisés et à concevoir une interface utilisateur réactive et agréable.
+                      {t('projects.musicPlayer.whyImportant')}
                     </p>
                   </div>
                 </div>
@@ -465,7 +451,7 @@ const Projet = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                     </div>
-                    Technologies Utilisées
+                    {t('projects.common.technologiesUsed')}
                   </h4>
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                     {[

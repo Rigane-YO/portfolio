@@ -2,9 +2,12 @@ import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useTheme } from '../../component/ThemeContext';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import LanguageSelector from '../../component/LanguageSelector';
 
 const Navigation = () => {
     const { isDark, toggleTheme } = useTheme();
+    const { t } = useTranslation();
     const [activeSection, setActiveSection] = useState('home');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -19,7 +22,12 @@ const Navigation = () => {
         }
     }; 
 
-    const menuItems = ['Home', 'About', 'Projects', 'Contact'];
+    const menuItems = [
+        { key: 'home', label: t('navigation.home') },
+        { key: 'about', label: t('navigation.about') },
+        { key: 'projects', label: t('navigation.projects') },
+        { key: 'contact', label: t('navigation.contact') }
+    ];
 
     // Gestion de la fermeture du menu avec Escape
     useEffect(() => {
@@ -53,22 +61,23 @@ const Navigation = () => {
                     >
                         {menuItems.map((item) => (
                             <button
-                                key={item}
+                                key={item.key}
                                 onClick={() => {
-                                    setActiveSection(item.toLowerCase());
-                                    handleScroll(item.toLowerCase());
+                                    setActiveSection(item.key);
+                                    handleScroll(item.key);
                                 }}
-                                className={`${activeSection === item.toLowerCase()
+                                className={`${activeSection === item.key
                                     ? 'text-blue-600'
                                     : isDark ? 'text-gray-300 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'
                                     } transition-colors`}
                                 role="menuitem"
-                                aria-current={activeSection === item.toLowerCase() ? 'page' : undefined}
-                                aria-label={`Aller à la section ${item}`}
+                                aria-current={activeSection === item.key ? 'page' : undefined}
+                                aria-label={`Aller à la section ${item.label}`}
                             >
-                                {item}
+                                {item.label}
                             </button>
                         ))}
+                        <LanguageSelector />
                         <button
                             onClick={toggleTheme}
                             className={`p-2 rounded-full ${isDark ? 'bg-gray-700 text-yellow-400' : 'bg-gray-100 text-gray-600'} hover:bg-opacity-80 transition-colors`}
@@ -106,28 +115,37 @@ const Navigation = () => {
                         >
                             {menuItems.map((item, index) => (
                                 <motion.button
-                                    key={item}
+                                    key={item.key}
                                     onClick={() => {
-                                        setActiveSection(item.toLowerCase());
-                                        handleScroll(item.toLowerCase());
+                                        setActiveSection(item.key);
+                                        handleScroll(item.key);
                                         setIsMenuOpen(false);
                                     }}
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -20 }}
                                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                                    className={`block w-full text-left px-4 py-2 rounded-md 
-                                        ${activeSection === item.toLowerCase()
+                                    className={`block w-full text-left px-4 py-2 rounded-md
+                                        ${activeSection === item.key
                                             ? 'text-blue-600 font-semibold'
                                             : isDark ? 'text-gray-300 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'}
                                         transition-colors`}
                                     role="menuitem"
-                                    aria-current={activeSection === item.toLowerCase() ? 'page' : undefined}
-                                    aria-label={`Aller à la section ${item}`}
+                                    aria-current={activeSection === item.key ? 'page' : undefined}
+                                    aria-label={`Aller à la section ${item.label}`}
                                 >
-                                    {item}
+                                    {item.label}
                                 </motion.button>
                             ))}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.8 }}
+                                transition={{ duration: 0.3 }}
+                                className="mt-3 flex justify-center"
+                            >
+                                <LanguageSelector />
+                            </motion.div>
                             <motion.button
                                 onClick={toggleTheme}
                                 initial={{ opacity: 0, scale: 0.8 }}

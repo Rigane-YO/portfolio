@@ -1,6 +1,7 @@
 import { useTheme } from '../../component/ThemeContext';
 import { Star, Quote } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 interface Testimonial {
   id: number;
@@ -44,6 +45,14 @@ const testimonials: Testimonial[] = [
 
 const Testimonials = () => {
   const { isDark } = useTheme();
+  const { t } = useTranslation();
+
+  // Récupérer les témoignages traduits et les combiner avec les avatars
+  const translatedTestimonials = (t('testimonials.clients', { returnObjects: true }) as any[]).map((testimonial, index) => ({
+    ...testimonial,
+    id: index + 1,
+    avatar: testimonials[index]?.avatar || ""
+  }));
 
   return (
     <section className={`py-20 ${isDark ? 'bg-gray-800' : 'bg-white'} transition-colors duration-200`}>
@@ -56,15 +65,15 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-            Ce qu'ils disent de moi
+            {t('testimonials.title')}
           </h2>
           <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'} max-w-2xl mx-auto`}>
-            Découvrez les témoignages de mes clients et collaborateurs sur la qualité de mon travail.
+            {t('testimonials.subtitle')}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {testimonials.map((testimonial, index) => (
+          {translatedTestimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
               initial={{ opacity: 0, y: 50 }}
@@ -106,7 +115,7 @@ const Testimonials = () => {
                     {testimonial.name}
                   </h4>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                    {testimonial.role} chez {testimonial.company}
+                    {testimonial.role} {t('testimonials.at')} {testimonial.company}
                   </p>
                 </div>
               </div>
@@ -124,16 +133,16 @@ const Testimonials = () => {
         >
           <div className={`inline-block p-6 rounded-xl ${isDark ? 'bg-gray-700' : 'bg-gray-50'} shadow-lg`}>
             <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-              Prêt à collaborer ?
+              {t('testimonials.cta.title')}
             </h3>
             <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'} mb-6`}>
-              Rejoignez la liste de mes clients satisfaits et transformons vos idées en réalité !
+              {t('testimonials.cta.description')}
             </p>
             <a
               href="#contact"
               className={`inline-flex items-center px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5`}
             >
-              Commencer un projet
+              {t('testimonials.cta.button')}
             </a>
           </div>
         </motion.div>

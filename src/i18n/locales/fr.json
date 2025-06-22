@@ -1,0 +1,185 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "RAKOTOZANANY Reald Rigane",
+    "title": "Développeur Frontend spécialisé en React.js & TypeScript",
+    "description": "Création d'applications web modernes avec un focus sur la performance et l'expérience utilisateur."
+  },
+  "about": {
+    "title": "À propos de moi",
+    "intro": "👋 Salut, je suis Reald ! Un développeur frontend passionné qui aime transformer les idées en expériences élégantes et interactives. Mon outil de prédilection ? React ! J'explore constamment les meilleures pratiques pour construire des interfaces utilisateur modernes et performantes.",
+    "technologies": "Technologies",
+    "frontend": "Frontend",
+    "styling": "Styling",
+    "stateApi": "State & API",
+    "tools": "Outils",
+    "currentExperience": "Expérience Actuelle",
+    "internTitle": "Stagiaire Développeur Frontend",
+    "internCompany": "Steedy digital Solutions",
+    "internDuration": "Stage de 6 mois",
+    "internDescription": "Actuellement en train de travailler sur des solutions web innovantes, en me concentrant sur le développement React et les pratiques frontend modernes. Cette expérience a été déterminante pour appliquer les connaissances théoriques à des projets concrets et travailler dans un environnement de développement professionnel.",
+    "achievement1": "Renforcé mes compétences en React et gestion d'état.",
+    "achievement2": "Optimisé les appels API pour de meilleures performances.",
+    "achievement3": "Collaboré avec des développeurs backend, acquérant des connaissances sur les architectures API-first.",
+    "whatDrivesMe": "Ce qui me motive",
+    "motivation1": "Je suis toujours à la recherche de moyens d'améliorer et de faire progresser mes compétences. En ce moment, j'approfondis les concepts React avancés pour pousser mon développement frontend plus loin.",
+    "motivation2": "Inspiré par les contes épiques et la culture chinoise 🏮, je vois le développement web comme un voyage légendaire—rempli d'apprentissage, de défis et de résolution créative de problèmes—tout comme les aventures de Sun Wukong.",
+    "letsConnect": "Travaillons ensemble !",
+    "connectDescription": "Vous cherchez un développeur motivé et créatif prêt à relever de nouveaux défis ? Connectons-nous et donnons vie à vos idées ! 🚀"
+  },
+  "skills": {
+    "title": "Mes Compétences",
+    "subtitle": "Un aperçu de mes compétences techniques et de mon niveau d'expertise dans chaque technologie.",
+    "categories": {
+      "frontend": "Frontend",
+      "styling": "Styling",
+      "stateApi": "State & API",
+      "tools": "Outils"
+    },
+    "level": "Niveau",
+    "beginner": "Débutant",
+    "expert": "Expert",
+    "evolution": {
+      "title": "En constante évolution",
+      "description": "Je continue d'apprendre et de maîtriser de nouvelles technologies pour rester à la pointe du développement web moderne.",
+      "learning": "en cours"
+    }
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "badges": {
+      "popular": "Projet Populaire",
+      "innovative": "Projet Innovant",
+      "available": "Disponible"
+    },
+    "buttons": {
+      "demo": "Voir la Demo",
+      "demoSoon": "Demo (Bientôt)",
+      "code": "Code Source",
+      "codePrivate": "Code (Privé)"
+    },
+    "common": {
+      "whatIBuilt": "Ce que j'ai réalisé :",
+      "features": "🛠 Fonctionnalités :",
+      "whyImportant": "💡 Pourquoi ce projet est important ?",
+      "technologiesUsed": "Technologies Utilisées",
+      "projectStatus": "🚀 Statut du Projet",
+      "projectAvailable": "Projet Disponible",
+      "interactiveDashboard": "Dashboard Interactif"
+    },
+    "solar": {
+      "title": "Solar - Dashboard Énergie",
+      "subtitle": "Tableau de bord intelligent pour l'énergie solaire",
+      "description": "Solar est une application web développée avec React pour visualiser et gérer les données de production et de consommation d'énergie solaire. Connectée à un backend en Django Rest Framework, elle offre une interface fluide et intuitive permettant aux utilisateurs de surveiller en temps réel leurs installations solaires.",
+      "achievements": [
+        "Intégration complète du frontend avec React et gestion des requêtes API avec React Query.",
+        "Optimisation des performances grâce à un rendering efficace et une gestion optimisée des états.",
+        "Communication fluide avec le backend pour récupérer et afficher les données énergétiques en temps réel.",
+        "Conception d'une interface utilisateur intuitive, facilitant la navigation et l'analyse des données."
+      ],
+      "features": {
+        "realTimeMonitoring": "Real-time Monitoring",
+        "realTimeDesc": "Live power consumption tracking",
+        "historicalData": "Historical Data",
+        "historicalDesc": "Daily/Weekly/Monthly/Yearly reports",
+        "dataVisualization": "Data Visualization",
+        "dataVisualizationDesc": "Interactive charts and analytics"
+      },
+      "whyImportant": "Ce projet m'a permis d'approfondir mes compétences en développement frontend avancé, en optimisation d'appels API et en collaboration avec un backend structuré. Il m'a aussi donné une meilleure compréhension des enjeux liés aux systèmes énergétiques intelligents.",
+      "status": "Développement en cours - Version bêta prévue Q2 2024"
+    },
+    "musicPlayer": {
+      "title": "Music Player",
+      "subtitle": "Lecteur Multimédia Avancé",
+      "description": "🎵 MyPlaylist – Un lecteur multimédia léger et performant. Un lecteur de playlists inspiré de VLC, permettant de lire facilement des fichiers audio et vidéo avec une interface simple et fluide.",
+      "features": [
+        "Lecture de fichiers multimédias (audio & mp3).",
+        "Gestion de playlists personnalisées.",
+        "Contrôles avancés (pause, lecture, avance rapide, volume).",
+        "Interface intuitive et responsive."
+      ],
+      "featureCards": {
+        "continuousPlayback": "Lecture en continu",
+        "continuousDesc": "Profitez d'une lecture fluide sans interruptions avec un support de multiples formats audio.",
+        "playlistManagement": "Gestion des playlists",
+        "playlistDesc": "Créez et organisez vos propres playlists pour une expérience d'écoute personnalisée.",
+        "advancedControls": "Contrôle avancé du son",
+        "advancedDesc": "Ajustez l'égaliseur et gérez le volume pour une qualité audio optimale."
+      },
+      "whyImportant": "Ce projet m'a permis d'approfondir mes compétences en développement frontend avancé avec React et TypeScript. J'ai aussi appris à gérer des fichiers multimédias, à implémenter des contrôles de lecture personnalisés et à concevoir une interface utilisateur réactive et agréable.",
+      "statusTitle": "Projet Disponible",
+      "statusDesc": "Application complète et fonctionnelle"
+    }
+  },
+  "testimonials": {
+    "title": "Ce qu'ils disent de moi",
+    "subtitle": "Découvrez les témoignages de mes clients et collaborateurs sur la qualité de mon travail.",
+    "at": "chez",
+    "cta": {
+      "title": "Prêt à collaborer ?",
+      "description": "Rejoignez la liste de mes clients satisfaits et transformons vos idées en réalité !",
+      "button": "Commencer un projet"
+    },
+    "clients": [
+      {
+        "name": "Sarah Johnson",
+        "role": "Chef de Projet",
+        "company": "TechCorp",
+        "content": "Reald a été un excellent collaborateur sur notre projet. Son expertise en React et sa capacité à livrer des solutions de qualité dans les délais ont été remarquables. Je recommande vivement !",
+        "rating": 5
+      },
+      {
+        "name": "Michael Chen",
+        "role": "Lead Developer",
+        "company": "StartupXYZ",
+        "content": "Travailler avec Reald a été une expérience très positive. Il comprend rapidement les besoins et propose des solutions innovantes. Son code est propre et bien documenté.",
+        "rating": 5
+      },
+      {
+        "name": "Emma Rodriguez",
+        "role": "UX Designer",
+        "company": "DesignStudio",
+        "content": "Reald a une excellente compréhension de l'expérience utilisateur. Il a su transformer nos maquettes en interfaces fonctionnelles et esthétiques. Un vrai professionnel !",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "subtitle": "Prêt à collaborer sur votre prochain projet ? N'hésitez pas à me contacter !",
+    "contactInfo": "Informations de contact",
+    "followMe": "Suivez-moi",
+    "sendMessage": "Envoyez-moi un message",
+    "form": {
+      "name": "Nom complet",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès !",
+      "error": "Erreur lors de l'envoi du message.",
+      "placeholders": {
+        "name": "Votre nom",
+        "email": "votre@email.com",
+        "subject": "Sujet de votre message",
+        "message": "Décrivez votre projet ou votre demande..."
+      }
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Téléphone",
+      "location": "Localisation"
+    }
+  },
+  "footer": {
+    "contact": "Contact",
+    "connect": "Réseaux",
+    "copyright": "© 2024 RAKOTOZANANY Reald Rigane. Tous droits réservés."
+  }
+}

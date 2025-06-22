@@ -1,6 +1,7 @@
 import { useTheme } from './ThemeContext';
 import { motion } from 'framer-motion';
 import { Code2, Database, Palette, Zap, Globe, Shield } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface Skill {
   name: string;
@@ -35,8 +36,19 @@ const skills: Skill[] = [
 
 const Skills = () => {
   const { isDark } = useTheme();
+  const { t } = useTranslation();
 
   const categories = ['Frontend', 'Styling', 'State & API', 'Tools'];
+
+  const getCategoryTranslation = (category: string) => {
+    switch (category) {
+      case 'Frontend': return t('skills.categories.frontend');
+      case 'Styling': return t('skills.categories.styling');
+      case 'State & API': return t('skills.categories.stateApi');
+      case 'Tools': return t('skills.categories.tools');
+      default: return category;
+    }
+  };
 
   return (
     <section className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-200`}>
@@ -49,10 +61,10 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-            Mes Compétences
+            {t('skills.title')}
         </h2>
           <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'} max-w-2xl mx-auto`}>
-            Un aperçu de mes compétences techniques et de mon niveau d'expertise dans chaque technologie.
+            {t('skills.subtitle')}
           </p>
         </motion.div>
 
@@ -67,7 +79,7 @@ const Skills = () => {
               className="mb-12"
             >
               <h3 className={`text-2xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'} text-center`}>
-                {category}
+                {getCategoryTranslation(category)}
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -93,7 +105,7 @@ const Skills = () => {
                       
                       <div className="mb-3">
                         <div className="flex justify-between text-sm mb-1">
-                          <span className={`${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Niveau</span>
+                          <span className={`${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{t('skills.level')}</span>
                           <span className={`font-medium ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
                             {skill.level}%
                           </span>
@@ -110,8 +122,8 @@ const Skills = () => {
                       </div>
                       
                       <div className="flex justify-between text-xs">
-                        <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'}`}>Débutant</span>
-                        <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'}`}>Expert</span>
+                        <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'}`}>{t('skills.beginner')}</span>
+                        <span className={`${isDark ? 'text-gray-500' : 'text-gray-500'}`}>{t('skills.expert')}</span>
                   </div>
                     </motion.div>
                 ))}
@@ -130,10 +142,10 @@ const Skills = () => {
         >
           <div className={`inline-block p-8 rounded-xl ${isDark ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
             <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-              En constante évolution
+              {t('skills.evolution.title')}
             </h3>
             <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'} mb-6 max-w-2xl`}>
-              Je continue d'apprendre et de maîtriser de nouvelles technologies pour rester à la pointe du développement web moderne.
+              {t('skills.evolution.description')}
             </p>
             <div className="flex flex-wrap justify-center gap-2">
               {['Next.js', 'Node.js', 'GraphQL', 'Docker'].map((tech) => (
@@ -141,7 +153,7 @@ const Skills = () => {
                   key={tech}
                   className={`px-3 py-1 rounded-full text-sm ${isDark ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-700'}`}
                 >
-                  {tech} (en cours)
+                  {tech} ({t('skills.evolution.learning')})
                 </span>
               ))}
             </div>

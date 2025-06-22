@@ -1,0 +1,185 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects", 
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "RAKOTOZANANY Reald Rigane",
+    "title": "Frontend Developer specializing in React.js & TypeScript",
+    "description": "Building modern web applications with a focus on performance and user experience."
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "👋 Hey, I'm Reald! A passionate frontend developer who loves turning ideas into sleek, interactive experiences. My go-to tool? React! I'm always exploring best practices to build modern and high-performance user interfaces.",
+    "technologies": "Technologies",
+    "frontend": "Frontend",
+    "styling": "Styling",
+    "stateApi": "State & API",
+    "tools": "Tools",
+    "currentExperience": "Current Experience",
+    "internTitle": "Frontend Developer Intern",
+    "internCompany": "Steedy digital Solutions",
+    "internDuration": "6 months internship",
+    "internDescription": "Currently working on innovative web solutions, focusing on React development and modern frontend practices. This experience has been instrumental in applying theoretical knowledge to real-world projects and working in a professional development environment.",
+    "achievement1": "Strengthened my skills in React and state management.",
+    "achievement2": "Optimized API calls for better performance.",
+    "achievement3": "Collaborated with backend developers, gaining insights into API-first architectures.",
+    "whatDrivesMe": "What Drives Me",
+    "motivation1": "I'm always on the lookout for ways to improve and level up my skills. Right now, I'm diving deeper into advanced React concepts to push my frontend development further.",
+    "motivation2": "Inspired by epic tales and Chinese culture 🏮, I see web development as a legendary journey—one filled with learning, challenges, and creative problem-solving—just like Sun Wukong's adventures.",
+    "letsConnect": "Let's Work Together!",
+    "connectDescription": "Looking for a motivated, creative developer ready to take on new challenges? Let's connect and bring your ideas to life! 🚀"
+  },
+  "skills": {
+    "title": "My Skills",
+    "subtitle": "An overview of my technical skills and expertise level in each technology.",
+    "categories": {
+      "frontend": "Frontend",
+      "styling": "Styling",
+      "stateApi": "State & API",
+      "tools": "Tools"
+    },
+    "level": "Level",
+    "beginner": "Beginner",
+    "expert": "Expert",
+    "evolution": {
+      "title": "Constantly Evolving",
+      "description": "I continue to learn and master new technologies to stay at the forefront of modern web development.",
+      "learning": "learning"
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "badges": {
+      "popular": "Popular Project",
+      "innovative": "Innovative Project",
+      "available": "Available"
+    },
+    "buttons": {
+      "demo": "View Demo",
+      "demoSoon": "Demo (Coming Soon)",
+      "code": "Source Code",
+      "codePrivate": "Code (Private)"
+    },
+    "common": {
+      "whatIBuilt": "What I built:",
+      "features": "🛠 Features:",
+      "whyImportant": "💡 Why this project is important?",
+      "technologiesUsed": "Technologies Used",
+      "projectStatus": "🚀 Project Status",
+      "projectAvailable": "Project Available",
+      "interactiveDashboard": "Interactive Dashboard"
+    },
+    "solar": {
+      "title": "Solar - Energy Dashboard",
+      "subtitle": "Smart dashboard for solar energy",
+      "description": "Solar is a web application developed with React to visualize and manage solar energy production and consumption data. Connected to a Django Rest Framework backend, it offers a smooth and intuitive interface allowing users to monitor their solar installations in real time.",
+      "achievements": [
+        "Complete frontend integration with React and API request management with React Query.",
+        "Performance optimization through efficient rendering and optimized state management.",
+        "Smooth communication with backend to retrieve and display energy data in real time.",
+        "Design of an intuitive user interface, facilitating navigation and data analysis."
+      ],
+      "features": {
+        "realTimeMonitoring": "Real-time Monitoring",
+        "realTimeDesc": "Live power consumption tracking",
+        "historicalData": "Historical Data",
+        "historicalDesc": "Daily/Weekly/Monthly/Yearly reports",
+        "dataVisualization": "Data Visualization",
+        "dataVisualizationDesc": "Interactive charts and analytics"
+      },
+      "whyImportant": "This project allowed me to deepen my skills in advanced frontend development, API call optimization and collaboration with a structured backend. It also gave me a better understanding of issues related to smart energy systems.",
+      "status": "Development in progress - Beta version expected Q2 2024"
+    },
+    "musicPlayer": {
+      "title": "Music Player",
+      "subtitle": "Advanced Media Player",
+      "description": "🎵 MyPlaylist – A lightweight and performant media player. A playlist player inspired by VLC, allowing easy playback of audio and video files with a simple and smooth interface.",
+      "features": [
+        "Multimedia file playback (audio & mp3).",
+        "Custom playlist management.",
+        "Advanced controls (pause, play, fast forward, volume).",
+        "Intuitive and responsive interface."
+      ],
+      "featureCards": {
+        "continuousPlayback": "Continuous Playback",
+        "continuousDesc": "Enjoy smooth playback without interruptions with support for multiple audio formats.",
+        "playlistManagement": "Playlist Management",
+        "playlistDesc": "Create and organize your own playlists for a personalized listening experience.",
+        "advancedControls": "Advanced Sound Control",
+        "advancedDesc": "Adjust the equalizer and manage volume for optimal audio quality."
+      },
+      "whyImportant": "This project allowed me to deepen my skills in advanced frontend development with React and TypeScript. I also learned to manage multimedia files, implement custom playback controls and design a responsive and pleasant user interface.",
+      "statusTitle": "Project Available",
+      "statusDesc": "Complete and functional application"
+    }
+  },
+  "testimonials": {
+    "title": "What they say about me",
+    "subtitle": "Discover testimonials from my clients and collaborators about the quality of my work.",
+    "at": "at",
+    "cta": {
+      "title": "Ready to collaborate?",
+      "description": "Join the list of my satisfied clients and let's turn your ideas into reality!",
+      "button": "Start a project"
+    },
+    "clients": [
+      {
+        "name": "Sarah Johnson",
+        "role": "Project Manager",
+        "company": "TechCorp",
+        "content": "Reald was an excellent collaborator on our project. His React expertise and ability to deliver quality solutions on time were remarkable. I highly recommend him!",
+        "rating": 5
+      },
+      {
+        "name": "Michael Chen",
+        "role": "Lead Developer",
+        "company": "StartupXYZ",
+        "content": "Working with Reald was a very positive experience. He quickly understands requirements and proposes innovative solutions. His code is clean and well documented.",
+        "rating": 5
+      },
+      {
+        "name": "Emma Rodriguez",
+        "role": "UX Designer",
+        "company": "DesignStudio",
+        "content": "Reald has an excellent understanding of user experience. He was able to transform our mockups into functional and aesthetic interfaces. A true professional!",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Ready to collaborate on your next project? Feel free to reach out!",
+    "contactInfo": "Contact Information",
+    "followMe": "Follow Me",
+    "sendMessage": "Send me a message",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message.",
+      "placeholders": {
+        "name": "Your name",
+        "email": "your@email.com",
+        "subject": "Subject of your message",
+        "message": "Describe your project or request..."
+      }
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    }
+  },
+  "footer": {
+    "contact": "Contact",
+    "connect": "Connect", 
+    "copyright": "© 2024 RAKOTOZANANY Reald Rigane. All rights reserved."
+  }
+}

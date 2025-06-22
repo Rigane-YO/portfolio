@@ -5,9 +5,11 @@ import Profil from '../../assets/profil.png';
 import { useLayoutEffect, useRef, useState } from 'react';
 import OptimizedImage from '../../component/OptimizedImage';
 import gsap from 'gsap';
+import { useTranslation } from 'react-i18next';
 
 const HeroSection = () => {
   const { isDark } = useTheme();
+  const { t } = useTranslation();
   const comp = useRef(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -64,13 +66,13 @@ const HeroSection = () => {
 
             <div>
               <h1 className={`text-4xl md:text-5xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-6 hero-text`}>
-                RAKOTOZANANY Reald Rigane
+                {t('hero.name')}
               </h1>
               <h2 className={`text-xl md:text-2xl ${isDark ? 'text-gray-300' : 'text-gray-600'} mb-8 hero-text`}>
-                Frontend Developer specializing in React.js & TypeScript
+                {t('hero.title')}
               </h2>
               <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} mb-8 text-base md:text-lg hero-text`}>
-                Building modern web applications with a focus on performance and user experience.
+                {t('hero.description')}
               </p>
               
               {/* Social Icons */}

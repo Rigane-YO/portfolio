@@ -4,9 +4,11 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { EmailService } from '../../util/emailService';
 import { ContactFormData } from '../../util/emailConfig';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
   const { isDark } = useTheme();
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -76,10 +78,10 @@ const Contact = () => {
             className="text-center mb-16"
           >
             <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-              Contactez-moi
+              {t('contact.title')}
             </h2>
             <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'} max-w-2xl mx-auto`}>
-              Prêt à collaborer sur votre prochain projet ? N'hésitez pas à me contacter !
+              {t('contact.subtitle')}
             </p>
           </motion.div>
 
@@ -92,7 +94,7 @@ const Contact = () => {
               viewport={{ once: true }}
             >
               <h3 className={`text-2xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                Informations de contact
+                {t('contact.contactInfo')}
               </h3>
               
               <div className="space-y-6">
@@ -101,8 +103,8 @@ const Contact = () => {
                     <Mail className={`w-6 h-6 ${isDark ? 'text-white' : 'text-blue-600'}`} />
                   </div>
                   <div>
-                    <h4 className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Email</h4>
-                    <a 
+                    <h4 className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('contact.info.email')}</h4>
+                    <a
                       href="mailto:rigane.rakotozanany@gmail.com"
                       className={`${isDark ? 'text-blue-400' : 'text-blue-600'} hover:underline`}
                     >
@@ -116,8 +118,8 @@ const Contact = () => {
                     <Phone className={`w-6 h-6 ${isDark ? 'text-white' : 'text-green-600'}`} />
                   </div>
                   <div>
-                    <h4 className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Téléphone</h4>
-                    <a 
+                    <h4 className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('contact.info.phone')}</h4>
+                    <a
                       href="tel:+261340000000"
                       className={`${isDark ? 'text-green-400' : 'text-green-600'} hover:underline`}
                     >
@@ -131,7 +133,7 @@ const Contact = () => {
                     <MapPin className={`w-6 h-6 ${isDark ? 'text-white' : 'text-purple-600'}`} />
                   </div>
                   <div>
-                    <h4 className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Localisation</h4>
+                    <h4 className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('contact.info.location')}</h4>
                     <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                       Antananarivo, Madagascar
                     </p>
@@ -142,7 +144,7 @@ const Contact = () => {
               {/* Réseaux sociaux */}
               <div className="mt-8">
                 <h4 className={`font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                  Suivez-moi
+                  {t('contact.followMe')}
                 </h4>
                 <div className="flex space-x-4">
                   <a 
@@ -178,7 +180,7 @@ const Contact = () => {
             >
               <div className={`p-8 rounded-xl shadow-lg ${isDark ? 'bg-gray-800' : 'bg-white'}`}>
                 <h3 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                  Envoyez-moi un message
+                  {t('contact.sendMessage')}
                 </h3>
 
                 {submitStatus.type && (
@@ -210,7 +212,7 @@ const Contact = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className={`block text-sm font-medium mb-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        Nom complet *
+                        {t('contact.form.name')} *
                       </label>
                       <input
                         type="text"
@@ -220,16 +222,16 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className={`w-full px-4 py-3 rounded-lg border ${
-                          isDark 
-                            ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500' 
+                          isDark
+                            ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500'
                             : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blue-500'
                         } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors`}
-                        placeholder="Votre nom"
+                        placeholder={t('contact.form.placeholders.name')}
                       />
                     </div>
                     <div>
                       <label htmlFor="email" className={`block text-sm font-medium mb-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        Email *
+                        {t('contact.form.email')} *
                       </label>
                       <input
                         type="email"
@@ -239,18 +241,18 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className={`w-full px-4 py-3 rounded-lg border ${
-                          isDark 
-                            ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500' 
+                          isDark
+                            ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500'
                             : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blue-500'
                         } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors`}
-                        placeholder="votre@email.com"
+                        placeholder={t('contact.form.placeholders.email')}
                       />
                     </div>
                   </div>
 
                   <div>
                     <label htmlFor="subject" className={`block text-sm font-medium mb-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Sujet *
+                      {t('contact.form.subject')} *
                     </label>
                     <input
                       type="text"
@@ -260,17 +262,17 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className={`w-full px-4 py-3 rounded-lg border ${
-                        isDark 
-                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500' 
+                        isDark
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500'
                           : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blue-500'
                       } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors`}
-                      placeholder="Sujet de votre message"
+                      placeholder={t('contact.form.placeholders.subject')}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="message" className={`block text-sm font-medium mb-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Message *
+                      {t('contact.form.message')} *
                     </label>
                     <textarea
                       id="message"
@@ -280,11 +282,11 @@ const Contact = () => {
                       required
                       rows={6}
                       className={`w-full px-4 py-3 rounded-lg border ${
-                        isDark 
-                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500' 
+                        isDark
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500'
                           : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blue-500'
                       } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors resize-none`}
-                      placeholder="Décrivez votre projet ou votre demande..."
+                      placeholder={t('contact.form.placeholders.message')}
                     />
                   </div>
 
@@ -300,12 +302,12 @@ const Contact = () => {
                     {isSubmitting ? (
                       <>
                         <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                        Envoi en cours...
+                        {t('contact.form.sending')}
                       </>
                     ) : (
                       <>
                         <Send className="w-5 h-5 mr-2" />
-                        Envoyer le message
+                        {t('contact.form.send')}
                       </>
                     )}
                   </button>

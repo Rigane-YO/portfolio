@@ -1,9 +1,11 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useTheme } from '../../component/ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const { isDark } = useTheme(); // Déplacé à l'intérieur du composant
+  const { t } = useTranslation();
 
   return (
     <footer className={`${isDark ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'} py-12`}>
@@ -13,7 +15,7 @@ const Footer = () => {
             
             {/* Contact Info */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Contact</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('footer.contact')}</h3>
               <div className="space-y-3">
                 <a href="mailto:contact@example.com" className="flex items-center space-x-2 hover:text-blue-500">
                   <Mail className="w-4 h-4" />
@@ -34,7 +36,7 @@ const Footer = () => {
 
             {/* Social Links */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Connect</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('footer.connect')}</h3>
               <div className="flex space-x-4">
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
                    className={`p-2 rounded-full transition-colors ${isDark ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'}`}>
@@ -55,7 +57,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800">
             <p className="text-center">
-              © {new Date().getFullYear()} Reald Rigane. All rights reserved.
+              {t('footer.copyright').replace('2024', new Date().getFullYear().toString())}
             </p>
           </div>
         </div>
